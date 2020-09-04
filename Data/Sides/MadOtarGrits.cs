@@ -9,9 +9,9 @@ using System.Text;
 
 using Size = BleakwindBuffet.Data.Enums.Size;
 
-namespace Data.Side
+namespace Bleakwindbuffet.Data.Sides
 {
-    class MadOtarGrits
+    public class MadOtarGrits
     {
         /// <summary>
         /// price of small 

@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Bhargav Marada
- * Class name: VokunSalad.cs
- * Purpose: a class to represent the Vokun Salad
+ * Class name: MarkarthMilk.cs
+ * Purpose: a class to represent the MarkarthMilk
  */
 using System;
 using System.Collections.Generic;
@@ -9,58 +9,67 @@ using System.Text;
 
 using Size = BleakwindBuffet.Data.Enums.Size;
 
-namespace Data.Side
+namespace Bleakwindbuffet.Data.Drinks
 {
-    class VokunSalad
+    class MarkarthMilk
     {
         /// <summary>
         /// price of small 
         /// </summary>
-        public double PriceSmall { get; } = 0.93;
+        public double PriceSmall { get; } = 1.05;
         // <summary>
         /// price of medium 
         /// </summary>
-        public double PriceMedium { get; } = 1.28;
+        public double PriceMedium { get; } = 1.11;
         // <summary>
         /// price of large 
         /// </summary>
-        public double PriceLarge { get; } = 1.82;
+        public double PriceLarge { get; } = 1.22;
 
         // <summary>
         /// Calories of small 
         /// </summary>
-        public uint CaloriesSmall { get; } = 41;
+        public uint CaloriesSmall { get; } = 56;
         // <summary>
         /// Calories of medium 
         /// </summary>
-        public uint CaloriesMedium { get; } = 52;
+        public uint CaloriesMedium { get; } = 72;
         // <summary>
         /// Calories of large 
         /// </summary>
-        public uint CaloriesLarge { get; } = 73;
+        public uint CaloriesLarge { get; } = 93;
 
         // <summary>
-        /// size of side 
+        /// ice in drink 
+        /// </summary>
+        public bool Ice { get; set; } = false;
+
+        // <summary>
+        /// size of drink 
         /// </summary>
         public Size Size { get; set; } = Size.Small;
 
         // <summary>
-        /// special instructions for side 
+        /// special instructions for drink 
         /// </summary>
         public List<string> SpecialInstructions
         {
             get
             {
-                return new List<string>();
+                List<string> SpecialInstructions = new List<string>();
+                if (!Ice) SpecialInstructions.Add("Add Ice");
+
+                return SpecialInstructions;
             }
         }
 
         // <summary>
-        /// to string for side 
+        /// to string for drink 
         /// </summary>
         public override string ToString()
         {
-            return Size + " Vokun Salad";
+            return Size + " Markarth Milk";
         }
+
     }
 }
