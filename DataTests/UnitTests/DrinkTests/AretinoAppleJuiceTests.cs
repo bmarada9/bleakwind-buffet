@@ -30,11 +30,23 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldBeAbleToSetIce()
         {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            aj.Ice = true;
+            Assert.Equal(aj.Ice);
+            aj.Ice = false;
+            Assert.Equal(aj.Ice);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            aj.Size = Size.Large
+            Assert.Equal(Size.Large, aj.Size);
+            aj.Size = Size.Medium;
+            Assert.Equal(Size.Medium, aj.Size);
+            aj.Size = Size.Small;
+            Assert.Equal(Size.Small, aj.Size);
         }
 
         [Theory]
