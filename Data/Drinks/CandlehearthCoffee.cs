@@ -68,8 +68,8 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 List<string> SpecialInstructions = new List<string>();
-                if (!Ice) SpecialInstructions.Add("Add Ice");
-                if (!RoomForCream) SpecialInstructions.Add("Leave Room For Cream");
+                if (Ice) SpecialInstructions.Add("Add Ice");
+                if (RoomForCream) SpecialInstructions.Add("Leave Room For Cream");
                 return SpecialInstructions;
             }
         }

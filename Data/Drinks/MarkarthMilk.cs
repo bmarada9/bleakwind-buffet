@@ -11,7 +11,7 @@ using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    class MarkarthMilk
+    public class MarkarthMilk
     {
         /// <summary>
         /// Price for the MarkarthMilk
@@ -61,7 +61,7 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 List<string> SpecialInstructions = new List<string>();
-                if (!Ice) SpecialInstructions.Add("Add Ice");
+                if (Ice) SpecialInstructions.Add("Add Ice");
 
                 return SpecialInstructions;
             }

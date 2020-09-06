@@ -8,6 +8,7 @@ using System;
 using Xunit;
 
 using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
@@ -17,31 +18,62 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldIncludeIceByDefault()
         {
+            SailorsSoda ss = new SailorsSoda();
+            Assert.True(ss.Ice);
         }
 
         [Fact]
         public void ShouldBeSmallByDefault()
         {
+            SailorsSoda ss = new SailorsSoda();
+            Assert.Equal(Size.Small, ss.Size);
         }
 
         [Fact]
         public void FlavorShouldBeCherryByDefault()
         {
+            SailorsSoda ss = new SailorsSoda();
+            Assert.Equal(SodaFlavor.Cherry, ss.Flavor);
         }
 
         [Fact]
         public void ShouldBeAbleToSetIce()
         {
+            SailorsSoda ss = new SailorsSoda();
+            ss.Ice = true;
+            Assert.True(ss.Ice);
+            ss.Ice = false;
+            Assert.False(ss.Ice);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
+            SailorsSoda ss = new SailorsSoda();
+            ss.Size = Size.Large;
+            Assert.Equal(Size.Large, ss.Size);
+            ss.Size = Size.Medium;
+            Assert.Equal(Size.Medium, ss.Size);
+            ss.Size = Size.Small;
+            Assert.Equal(Size.Small, ss.Size);
         }
 
         [Fact]
         public void ShouldBeAbleToSetFlavor()
         {
+            SailorsSoda ss = new SailorsSoda();
+            ss.Flavor = SodaFlavor.Blackberry;
+            Assert.Equal(SodaFlavor.Blackberry, ss.Flavor);
+            ss.Flavor = SodaFlavor.Cherry;
+            Assert.Equal(SodaFlavor.Cherry, ss.Flavor);
+            ss.Flavor = SodaFlavor.Grapefruit;
+            Assert.Equal(SodaFlavor.Grapefruit, ss.Flavor);
+            ss.Flavor = SodaFlavor.Lemon;
+            Assert.Equal(SodaFlavor.Lemon, ss.Flavor);
+            ss.Flavor = SodaFlavor.Peach;
+            Assert.Equal(SodaFlavor.Peach, ss.Flavor);
+            ss.Flavor = SodaFlavor.Watermelon;
+            Assert.Equal(SodaFlavor.Watermelon, ss.Flavor);
         }
 
         [Theory]
@@ -50,6 +82,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Large, 2.07)]
         public void ShouldHaveCorrectPriceForSize(Size size, double price)
         {
+            SailorsSoda ss = new SailorsSoda();
+            ss.Size = size;
+            Assert.Equal(price, ss.Price);
         }
 
         [Theory]
@@ -58,6 +93,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Large, 205)]
         public void ShouldHaveCorrectCaloriesForSize(Size size, uint cal)
         {
+            SailorsSoda ss = new SailorsSoda();
+            ss.Size = size;
+            Assert.Equal(cal, ss.Calories);
         }
 
         [Theory]
@@ -65,6 +103,10 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(false)]
         public void ShouldHaveCorrectSpecialInstructions(bool includeIce)
         {
+            SailorsSoda ss = new SailorsSoda();
+            ss.Ice = includeIce;
+            if (!includeIce) Assert.Contains("Hold Ice", ss.SpecialInstructions);
+            else Assert.Empty(ss.SpecialInstructions);
         }
         
         [Theory]
@@ -93,6 +135,10 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(SodaFlavor.Watermelon, Size.Large, "Large Watermelon Sailor Soda")]
         public void ShouldHaveCorrectToStringBasedOnSizeAndFlavor(SodaFlavor flavor, Size size, string name)
         {
+            SailorsSoda ss = new SailorsSoda();
+            ss.Size = size;
+            ss.Flavor = flavor;
+            Assert.Equal(name, ss.ToString());
         }
     }
 }

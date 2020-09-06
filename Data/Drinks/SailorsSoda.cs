@@ -11,7 +11,7 @@ using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    class SailorsSoda
+    public class SailorsSoda
     {
         
         /// <summary>
