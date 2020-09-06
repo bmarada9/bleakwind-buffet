@@ -9,35 +9,37 @@ using System.Text;
 
 using Size = BleakwindBuffet.Data.Enums.Size;
 
-namespace Bleakwindbuffet.Data.Sides
+namespace BleakwindBuffet.Data.Sides
 {
     public class MadOtarGrits
     {
         /// <summary>
-        /// price of small 
+        /// Price for the Mad Otar Grits
         /// </summary>
-        public double PriceSmall { get; } = 1.22;
-        // <summary>
-        /// price of medium 
-        /// </summary>
-        public double PriceMedium { get; } = 1.58;
-        // <summary>
-        /// price of large 
-        /// </summary>
-        public double PriceLarge { get; } = 1.93;
+        public double Price
+        {
+            get
+            {
+                if (this.Size == Size.Small) return 1.22;
+                if (this.Size == Size.Medium) return 1.58;
+                if (this.Size == Size.Large) return 1.93;
+                throw new NotImplementedException($"Unknown Size {this.Size}");
+            }
+        }
 
-        // <summary>
-        /// Calories of small 
+        /// <summary>
+        /// Calories for the Mad Otar Grits
         /// </summary>
-        public uint CaloriesSmall { get; } = 105;
-        // <summary>
-        /// Calories of medium 
-        /// </summary>
-        public uint CaloriesMedium { get; } = 142;
-        // <summary>
-        /// Calories of large 
-        /// </summary>
-        public uint CaloriesLarge { get; } = 179;
+        public uint Calories
+        {
+            get
+            {
+                if (this.Size == Size.Small) return 105;
+                if (this.Size == Size.Medium) return 142;
+                if (this.Size == Size.Large) return 179;
+                throw new NotImplementedException($"Unknown Size{this.Size}");
+            }
+        }
 
         // <summary>
         /// size of side 

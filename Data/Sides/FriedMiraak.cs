@@ -21,9 +21,9 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                if (this.Size == Size.Small) return 0.93;
-                if (this.Size == Size.Medium) return 1.28;
-                if (this.Size == Size.Large) return 1.82;
+                if (this.Size == Size.Small) return 1.78;
+                if (this.Size == Size.Medium) return 2.01;
+                if (this.Size == Size.Large) return 2.88;
                 throw new NotImplementedException($"Unknown Size {this.Size}");
             }
         }
@@ -35,9 +35,9 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                if (this.Size == Size.Small) return 41;
-                if (this.Size == Size.Medium) return 52;
-                if (this.Size == Size.Large) return 73;
+                if (this.Size == Size.Small) return 151;
+                if (this.Size == Size.Medium) return 236;
+                if (this.Size == Size.Large) return 306;
                 throw new NotImplementedException($"Unknown Size{this.Size}");
             }
         }
@@ -65,7 +65,7 @@ namespace BleakwindBuffet.Data.Sides
         /// </summary>
         public override string ToString()
         {
-            return Size + " Vokun Salad";
+            return Size + " Fried Miraak";
         }
     }
 }
