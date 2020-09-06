@@ -115,11 +115,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         {
             CandlehearthCoffe cc = new CandlehearthCoffe();
             cc.Ice = includeIce;
-            if (includeIce) Assert.Contains("Add Ice", cc.SpecialInstructions);
-            else Assert.Empty(cc.SpecialInstructions);
-
             cc.RoomForCream = includeCream;
-            if (includeCream) Assert.Contains("Leave Room For Cream", cc.SpecialInstructions);
+            if (includeIce && includeCream)
+            {
+                Assert.Contains("Add ice", cc.SpecialInstructions);
+                Assert.Contains("Add cream", cc.SpecialInstructions);
+            }
+            else if (includeIce && !includeCream) Assert.Contains("Add ice", cc.SpecialInstructions);
+            else if (!includeIce && includeCream) Assert.Contains("Add cream", cc.SpecialInstructions);
             else Assert.Empty(cc.SpecialInstructions);
         }
 
@@ -134,8 +137,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         {
             CandlehearthCoffe cc = new CandlehearthCoffe();
             cc.Size = size;
-            if(decaf) Assert.Equal(name, cc.ToString());
-            else Assert.Equal(name, cc.ToString());
+            cc.Decaf = decaf;
+            //if(decaf) Assert.Equal(name, cc.ToString());
+            Assert.Equal(name, cc.ToString());
         }
     }
 }

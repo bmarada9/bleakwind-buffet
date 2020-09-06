@@ -68,8 +68,8 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 List<string> SpecialInstructions = new List<string>();
-                if (Ice) SpecialInstructions.Add("Add Ice");
-                if (RoomForCream) SpecialInstructions.Add("Leave Room For Cream");
+                if (Ice) SpecialInstructions.Add("Add ice");
+                if (RoomForCream) SpecialInstructions.Add("Add cream");
                 return SpecialInstructions;
             }
         }
@@ -79,7 +79,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public override string ToString()
         {
-            if (!Decaf) return Size + "  Decaf Candlehearth Coffee";
+            if (Decaf) return Size + " Decaf Candlehearth Coffee";
             else return Size + " Candlehearth Coffee";
         }
 

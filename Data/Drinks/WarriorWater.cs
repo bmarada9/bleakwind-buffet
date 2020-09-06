@@ -11,7 +11,7 @@ using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    class WarriorWater
+    public class WarriorWater
     {
         /// <summary>
         /// Price for the Warrior Water
@@ -63,8 +63,8 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 List<string> SpecialInstructions = new List<string>();
-                if (!Ice) SpecialInstructions.Add("Hold Ice");
-                if (!Lemon) SpecialInstructions.Add("Add Lemon");
+                if (Ice) SpecialInstructions.Add("Hold Ice");
+                if (Lemon) SpecialInstructions.Add("Add Lemon");
 
                 return SpecialInstructions;
             }
