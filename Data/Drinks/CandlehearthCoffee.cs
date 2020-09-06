@@ -6,12 +6,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using BleakwindBuffet.Data;
 using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    class CandlehearthCoffe
+    public class CandlehearthCoffe
     {
         /// <summary>
         /// Price for the Candlehearth Coffee
@@ -69,7 +69,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 List<string> SpecialInstructions = new List<string>();
                 if (!Ice) SpecialInstructions.Add("Add Ice");
-                if (!RoomForCream) SpecialInstructions.Add("Add Cream");
+                if (!RoomForCream) SpecialInstructions.Add("Leave Room For Cream");
                 return SpecialInstructions;
             }
         }
