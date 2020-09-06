@@ -7,6 +7,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Drinks;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -15,11 +16,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldNotIncludeIceByDefault()
         {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.False(aj.Ice);
         }
 
         [Fact]
         public void ShouldBeSmallByDefault()
         {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.Equal(Size.Small, aj.Size);
         }
 
         [Fact]
