@@ -9,35 +9,39 @@ using System.Text;
 
 using Size = BleakwindBuffet.Data.Enums.Size;
 
-namespace Bleakwindbuffet.Data.Sides
+namespace BleakwindBuffet.Data.Sides
 {
     public class DragonBornWaffleFries
     {
         /// <summary>
-        /// price of small 
+        /// Price for the DragonBorn Waffle Fries
         /// </summary>
-        public double PriceSmall { get; } = 0.42;
-        // <summary>
-        /// price of medium 
-        /// </summary>
-        public double PriceMedium { get; } = 0.76;
-        // <summary>
-        /// price of large 
-        /// </summary>
-        public double PriceLarge { get; } = 0.96;
+        public double Price
+        {
+            get
+            {
+                if (this.Size == Size.Small) return 0.42;
+                if (this.Size == Size.Medium) return 0.76;
+                if (this.Size == Size.Large) return 0.96;
+                throw new NotImplementedException($"Unknown Size {this.Size}");
+            }
+        }
 
-        // <summary>
-        /// Calories of small 
+        /// <summary>
+        /// Calories for the Dragonborn Waffle fries
         /// </summary>
-        public uint CaloriesSmall { get; } = 77;
-        // <summary>
-        /// Calories of medium 
-        /// </summary>
-        public uint CaloriesMedium { get; } = 89;
-        // <summary>
-        /// Calories of large 
-        /// </summary>
-        public uint CaloriesLarge { get; } = 100;
+        public uint Calories
+        {
+            get
+            {
+                if (this.Size == Size.Small) return 77;
+                if (this.Size == Size.Medium) return 89;
+                if (this.Size == Size.Large) return 100;
+                throw new NotImplementedException($"Unknown Size{this.Size}");
+            }
+        }
+
+       
 
         // <summary>
         /// size of side 

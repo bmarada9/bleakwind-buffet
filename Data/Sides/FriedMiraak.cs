@@ -9,35 +9,40 @@ using System.Text;
 
 using Size = BleakwindBuffet.Data.Enums.Size;
 
-namespace Bleakwindbuffet.Data.Sides
+namespace BleakwindBuffet.Data.Sides
 {
     public class FriedMiraak
     {
-        /// <summary>
-        /// price of small 
-        /// </summary>
-        public double PriceSmall { get; } = 0.93;
-        // <summary>
-        /// price of medium 
-        /// </summary>
-        public double PriceMedium { get; } = 1.28;
-        // <summary>
-        /// price of large 
-        /// </summary>
-        public double PriceLarge { get; } = 1.82;
 
-        // <summary>
-        /// Calories of small 
+        /// <summary>
+        /// Price for the Fried Miraak
         /// </summary>
-        public uint CaloriesSmall { get; } = 41;
-        // <summary>
-        /// Calories of medium 
+        public double Price
+        {
+            get
+            {
+                if (this.Size == Size.Small) return 0.93;
+                if (this.Size == Size.Medium) return 1.28;
+                if (this.Size == Size.Large) return 1.82;
+                throw new NotImplementedException($"Unknown Size {this.Size}");
+            }
+        }
+
+        /// <summary>
+        /// Calories for the Fried Miraak
         /// </summary>
-        public uint CaloriesMedium { get; } = 52;
-        // <summary>
-        /// Calories of large 
-        /// </summary>
-        public uint CaloriesLarge { get; } = 73;
+        public uint Calories
+        {
+            get
+            {
+                if (this.Size == Size.Small) return 41;
+                if (this.Size == Size.Medium) return 52;
+                if (this.Size == Size.Large) return 73;
+                throw new NotImplementedException($"Unknown Size{this.Size}");
+            }
+        }
+
+        
 
         // <summary>
         /// size of side 
