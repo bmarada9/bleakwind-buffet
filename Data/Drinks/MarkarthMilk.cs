@@ -14,30 +14,34 @@ namespace BleakwindBuffet.Data.Drinks
     class MarkarthMilk
     {
         /// <summary>
-        /// price of small 
+        /// Price for the MarkarthMilk
         /// </summary>
-        public double PriceSmall { get; } = 1.05;
-        // <summary>
-        /// price of medium 
-        /// </summary>
-        public double PriceMedium { get; } = 1.11;
-        // <summary>
-        /// price of large 
-        /// </summary>
-        public double PriceLarge { get; } = 1.22;
+        public double Price
+        {
+            get
+            {
+                if (this.Size == Size.Small) return 1.05;
+                if (this.Size == Size.Medium) return 1.11;
+                if (this.Size == Size.Large) return 1.22;
+                throw new NotImplementedException($"Unknown Size {this.Size}");
+            }
+        }
 
-        // <summary>
-        /// Calories of small 
+        /// <summary>
+        /// Calories for the MarkarthMilk
         /// </summary>
-        public uint CaloriesSmall { get; } = 56;
-        // <summary>
-        /// Calories of medium 
-        /// </summary>
-        public uint CaloriesMedium { get; } = 72;
-        // <summary>
-        /// Calories of large 
-        /// </summary>
-        public uint CaloriesLarge { get; } = 93;
+        public uint Calories
+        {
+            get
+            {
+                if (this.Size == Size.Small) return 56;
+                if (this.Size == Size.Medium) return 72;
+                if (this.Size == Size.Large) return 93;
+                throw new NotImplementedException($"Unknown Size{this.Size}");
+            }
+        }
+
+        
 
         // <summary>
         /// ice in drink 

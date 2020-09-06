@@ -13,43 +13,33 @@ namespace BleakwindBuffet.Data.Drinks
 {
     class WarriorWater
     {
-        public Size Size
-        {
-            get;
-            set;
-        }
         /// <summary>
-        /// price of small 
+        /// Price for the Warrior Water
         /// </summary>
-        public double Price {
-            
+        public double Price
+        {
             get
             {
-                retrun 0;
+                if (this.Size == Size.Small) return 0.00;
+                if (this.Size == Size.Medium) return 0.00;
+                if (this.Size == Size.Large) return 0.00;
+                throw new NotImplementedException($"Unknown Size {this.Size}");
             }
+        }
 
-        } = 0;
-        // <summary>
-        /// price of medium 
+        /// <summary>
+        /// Calories for the Warrior Water
         /// </summary>
-        public double PriceMedium { get; } = 0;
-        // <summary>
-        /// price of large 
-        /// </summary>
-        public double PriceLarge { get; } = 0;
-
-        // <summary>
-        /// Calories of small 
-        /// </summary>
-        public uint CaloriesSmall { get; } = 0;
-        // <summary>
-        /// Calories of medium 
-        /// </summary>
-        public uint CaloriesMedium { get; } = 0;
-        // <summary>
-        /// Calories of large 
-        /// </summary>
-        public uint CaloriesLarge { get; } = 0;
+        public uint Calories
+        {
+            get
+            {
+                if (this.Size == Size.Small) return 0;
+                if (this.Size == Size.Medium) return 0;
+                if (this.Size == Size.Large) return 0;
+                throw new NotImplementedException($"Unknown Size{this.Size}");
+            }
+        }
 
         // <summary>
         /// ice in drink 

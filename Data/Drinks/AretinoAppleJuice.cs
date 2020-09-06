@@ -14,30 +14,33 @@ namespace BleakwindBuffet.Data.Drinks
     public class AretinoAppleJuice
     {
         /// <summary>
-        /// price of small 
+        /// Price for the Arentino Apple Juice
         /// </summary>
-        public double PriceSmall { get; } = 0.62;
-        // <summary>
-        /// price of medium 
-        /// </summary>
-        public double PriceMedium { get; } = 0.87;
-        // <summary>
-        /// price of large 
-        /// </summary>
-        public double PriceLarge { get; } = 1.01;
+        public double Price
+        {
+            get
+            {
+                if (this.Size == Size.Small) return 0.62;
+                if (this.Size == Size.Medium) return 0.87;
+                if (this.Size == Size.Large) return 1.01;
+                throw new NotImplementedException($"Unknown Size {this.Size}");
+            }
+        }
 
-        // <summary>
-        /// Calories of small 
+        /// <summary>
+        /// Calories for the Arentino Apple Juice
         /// </summary>
-        public uint CaloriesSmall { get; } = 44;
-        // <summary>
-        /// Calories of medium 
-        /// </summary>
-        public uint CaloriesMedium { get; } = 88;
-        // <summary>
-        /// Calories of large 
-        /// </summary>
-        public uint CaloriesLarge { get; } = 132;
+        public uint Calories
+        {
+            get
+            {
+                if (this.Size == Size.Small) return 44;
+                if (this.Size == Size.Medium) return 88;
+                if (this.Size == Size.Large) return 132;
+                throw new NotImplementedException($"Unknown Size{this.Size}");
+            }
+        }
+
 
         // <summary>
         /// ice in drink 
@@ -57,7 +60,7 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 List<string> SpecialInstructions = new List<string>();
-                if (!Ice) SpecialInstructions.Add("Add Ice");
+                if (Ice) SpecialInstructions.Add("Add Ice");
 
                 return SpecialInstructions;
             }

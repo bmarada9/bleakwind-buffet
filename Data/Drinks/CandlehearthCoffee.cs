@@ -14,30 +14,33 @@ namespace BleakwindBuffet.Data.Drinks
     class CandlehearthCoffe
     {
         /// <summary>
-        /// price of small 
+        /// Price for the Candlehearth Coffee
         /// </summary>
-        public double PriceSmall { get; } = 0.75;
-        // <summary>
-        /// price of medium 
-        /// </summary>
-        public double PriceMedium { get; } = 1.25;
-        // <summary>
-        /// price of large 
-        /// </summary>
-        public double PriceLarge { get; } = 1.75;
+        public double Price
+        {
+            get
+            {
+                if (this.Size == Size.Small) return 0.75;
+                if (this.Size == Size.Medium) return 1.25;
+                if (this.Size == Size.Large) return 1.75;
+                throw new NotImplementedException($"Unknown Size {this.Size}");
+            }
+        }
 
-        // <summary>
-        /// Calories of small 
+        /// <summary>
+        /// Calories for the Candlehearth Coffee
         /// </summary>
-        public uint CaloriesSmall { get; } = 7;
-        // <summary>
-        /// Calories of medium 
-        /// </summary>
-        public uint CaloriesMedium { get; } = 10;
-        // <summary>
-        /// Calories of large 
-        /// </summary>
-        public uint CaloriesLarge { get; } = 20;
+        public uint Calories
+        {
+            get
+            {
+                if (this.Size == Size.Small) return 7;
+                if (this.Size == Size.Medium) return 10;
+                if (this.Size == Size.Large) return 20;
+                throw new NotImplementedException($"Unknown Size{this.Size}");
+            }
+        }
+
 
         // <summary>
         /// ice in drink 
