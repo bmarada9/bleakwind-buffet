@@ -9,7 +9,7 @@ using System.Text;
 using BleakwindBuffet.Data;
 using Size = BleakwindBuffet.Data.Enums.Size;
 
-namespace Bleakwindbuffet.Data.Drinks
+namespace BleakwindBuffet.Data.Drinks
 {
     public class AretinoAppleJuice
     {

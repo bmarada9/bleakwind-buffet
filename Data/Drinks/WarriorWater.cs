@@ -9,14 +9,26 @@ using System.Text;
 
 using Size = BleakwindBuffet.Data.Enums.Size;
 
-namespace Bleakwindbuffet.Data.Drinks
+namespace BleakwindBuffet.Data.Drinks
 {
     class WarriorWater
     {
+        public Size Size
+        {
+            get;
+            set;
+        }
         /// <summary>
         /// price of small 
         /// </summary>
-        public double PriceSmall { get; } = 0;
+        public double Price {
+            
+            get
+            {
+                retrun 0;
+            }
+
+        } = 0;
         // <summary>
         /// price of medium 
         /// </summary>

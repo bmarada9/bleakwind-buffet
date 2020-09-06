@@ -9,36 +9,40 @@ using System.Text;
 using SodaFlavor = BleakwindBuffet.Data.Enums.SodaFlavor;
 using Size = BleakwindBuffet.Data.Enums.Size;
 
-namespace Bleakwindbuffet.Data.Drinks
+namespace BleakwindBuffet.Data.Drinks
 {
     class SailorsSoda
     {
+        
         /// <summary>
-        /// price of small 
+        /// Price for Sailor Soda
         /// </summary>
-        public double PriceSmall { get; } = 1.42;
-        // <summary>
-        /// price of medium 
-        /// </summary>
-        public double PriceMedium { get; } = 1.74;
-        // <summary>
-        /// price of large 
-        /// </summary>
-        public double PriceLarge { get; } = 2.07;
+        public double Price
+        {
+            get
+            {
+                if (this.Size == Size.Small) return 1.42;
+                if (this.Size == Size.Medium) return 1.74;
+                if (this.Size == Size.Large) return 2.07;
+                throw new NotImplementedException($"Unknown Size {this.Size}");
+            }
+        }
 
-        // <summary>
-        /// Calories of small 
+        /// <summary>
+        /// Calories for the Sailors Soda
         /// </summary>
-        public uint CaloriesSmall { get; } = 117;
-        // <summary>
-        /// Calories of medium 
-        /// </summary>
-        public uint CaloriesMedium { get; } = 153;
-        // <summary>
-        /// Calories of large 
-        /// </summary>
-        public uint CaloriesLarge { get; } = 205;
+        public uint Calories
+        {
+            get
+            {
+                if (this.Size == Size.Small) return 117;
+                if (this.Size == Size.Medium) return 153;
+                if (this.Size == Size.Large) return 205;
+                throw new NotImplementedException($"Unknown Size{this.Size}");
+            }
+        }
 
+        
         // <summary>
         /// ice in drink 
         /// </summary>

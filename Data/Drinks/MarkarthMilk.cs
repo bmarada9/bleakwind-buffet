@@ -9,7 +9,7 @@ using System.Text;
 
 using Size = BleakwindBuffet.Data.Enums.Size;
 
-namespace Bleakwindbuffet.Data.Drinks
+namespace BleakwindBuffet.Data.Drinks
 {
     class MarkarthMilk
     {
