@@ -55,6 +55,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Large, 1.01)]
         public void ShouldHaveCorrectPriceForSize(Size size, double price)
         {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            aj.Size = size;
+            Assert.Equal(price, aj.Price);
         }
 
         [Theory]
