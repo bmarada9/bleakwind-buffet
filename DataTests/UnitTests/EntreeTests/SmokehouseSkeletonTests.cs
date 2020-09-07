@@ -110,6 +110,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldReturnCorrectToString()
         {
+            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            Assert.NotNull(ss.ToString());
         }
     }
 }

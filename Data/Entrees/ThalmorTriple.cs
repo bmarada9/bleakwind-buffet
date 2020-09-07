@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Bleakwindbuffet.Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
     public class ThalmorTriple
     {
