@@ -52,17 +52,11 @@ namespace BleakwindBuffet.Data.Entrees
             get
             {
                 List<string> SpecialInstructions = new List<string>();
-                if (Bun == false)
-                {
-                    SpecialInstructions.Add("Hold bun");
-                }
-                if (Ketchup == false)
-                {
-                    SpecialInstructions.Add("Hold ketchup");
-                }
-                if(!Mustard)SpecialInstructions.Add("Hold mustard");
-                if(!Pickle)SpecialInstructions.Add("Hold pickle");
-                if(!Cheese)SpecialInstructions.Add("Hold cheese");
+                if (Bun) SpecialInstructions.Add("Hold bun");
+                if (Ketchup) SpecialInstructions.Add("Hold ketchup");
+                if (Mustard)SpecialInstructions.Add("Hold mustard");
+                if (Pickle)SpecialInstructions.Add("Hold pickle");
+                if (Cheese)SpecialInstructions.Add("Hold cheese");
 
                 return SpecialInstructions;
             }

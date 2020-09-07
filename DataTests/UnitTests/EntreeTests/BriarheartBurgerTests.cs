@@ -119,33 +119,33 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
                                                                     bool includePickle, bool includeCheese)
         {
             BriarheartBurger bb = new BriarheartBurger();
-            int instructionCount = 0;
+            //int instructionCount = 0;
             if (!includeBun) 
             {
                 Assert.Contains("Hold bun", bb.SpecialInstructions);
-                instructionCount++;
+                //instructionCount++;
             }
             if (!includeKetchup)
             {
                 Assert.Contains("Hold ketchup", bb.SpecialInstructions);
-                instructionCount++;
+                //instructionCount++;
             }
             if (!includeMustard)
             {
                 Assert.Contains("Hold mustard", bb.SpecialInstructions);
-                instructionCount++;
+                //instructionCount++;
             }
             if (!includePickle)
             {
                 Assert.Contains("Hold pickle", bb.SpecialInstructions);
-                instructionCount++;
+                //instructionCount++;
             }
             if (!includeCheese)
             {
                 Assert.Contains("Hold cheese", bb.SpecialInstructions);
-                instructionCount++;
+                //instructionCount++;
             }
-            Assert.Equal(instructionCount, bb.SpecialInstructions.Count);
+            //Assert.Equal(instructionCount, bb.SpecialInstructions.Count);
         }
 
         [Fact]
