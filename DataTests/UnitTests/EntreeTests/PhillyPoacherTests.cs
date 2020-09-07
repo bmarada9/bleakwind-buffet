@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Bhargav Marada
  * Class: PhillyPoacherTests.cs
  * Purpose: Test the PhillyPoacher.cs class in the Data library
  */
@@ -12,6 +12,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class PhillyPoacherTests
     {
+        /// <summary>
+        /// default sirloing
+        /// </summary>
         [Fact]
         public void ShouldInlcudeSirloinByDefault()
         {
@@ -19,6 +22,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(pp.Sirloin);
         }
 
+        /// <summary>
+        /// default onion
+        /// </summary>
         [Fact]
         public void ShouldInlcudeOnionByDefault()
         {
@@ -26,6 +32,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(pp.Onion);
         }
 
+        /// <summary>
+        /// default roll
+        /// </summary>
         [Fact]
         public void ShouldInlcudeRollByDefault()
         {
@@ -33,6 +42,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(pp.Roll);
         }
 
+        /// <summary>
+        /// choose not to have sirloin
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetSirloin()
         {
@@ -43,6 +55,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(pp.Sirloin);
         }
 
+        /// <summary>
+        /// choose not to have onions
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetOnions()
         {
@@ -53,6 +68,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(pp.Onion);
         }
 
+        /// <summary>
+        /// choose not to have rolls
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetRoll()
         {
@@ -63,6 +81,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(pp.Roll);
         }
 
+        /// <summary>
+        /// price
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectPrice()
         {
@@ -70,6 +91,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal(7.23, pp.Price);
         }
 
+        /// <summary>
+        /// calories
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectCalories()
         {
@@ -77,6 +101,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal(784u, pp.Calories);
         }
 
+        /// <summary>
+        /// special instrictions
+        /// </summary>
+        /// <param name="includeSirloin">hold sirloin</param>
+        /// <param name="includeOnion">hold onion</param>
+        /// <param name="includeRoll">hold roll</param>
         [Theory]
         [InlineData(true, true, true)]
         [InlineData(false, false, false)]
@@ -89,6 +119,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             if (!includeRoll) Assert.Contains("Hold roll", pp.SpecialInstructions);
         }
 
+        /// <summary>
+        /// to string
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectToString()
         {

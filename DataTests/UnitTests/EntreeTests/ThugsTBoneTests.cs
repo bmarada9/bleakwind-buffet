@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Bhargav Marada
  * Class: ThugsTBoneTests.cs
  * Purpose: Test the ThugsTBone.cs class in the Data library
  */
@@ -12,6 +12,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class ThugsTBoneTests
     {
+        /// <summary>
+        /// price
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectPrice()
         {
@@ -19,6 +22,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal(6.44, tb.Price);
         }
 
+        /// <summary>
+        /// calories
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectCalories()
         {
@@ -26,6 +32,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal(982u, tb.Calories);
         }
 
+        /// <summary>
+        /// special instructions
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectSpecialInstructions()
         {
@@ -33,6 +42,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Empty(tb.SpecialInstructions);
         }
 
+        /// <summary>
+        /// to string
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectToString()
         {

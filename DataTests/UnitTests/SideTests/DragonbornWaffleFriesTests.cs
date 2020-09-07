@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Bhargav Marada
  * Class: DragonbornWaffleFriesTests.cs
  * Purpose: Test the DragonbornWaffleFries.cs class in the Data library
  */
@@ -13,6 +13,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class DragonbornWaffleFriesTests
     {
+        /// <summary>
+        /// size small
+        /// </summary>
         [Fact]
         public void ShouldBeSmallByDefault()
         {
@@ -20,6 +23,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(Size.Small, wf.Size);
         }
 
+        /// <summary>
+        /// change size
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
@@ -32,6 +38,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(Size.Small, wf.Size);
         }
 
+        /// <summary>
+        /// special instructions
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectSpecialInstructions()
         {
@@ -39,6 +48,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Empty(wf.SpecialInstructions);
         }
 
+        /// <summary>
+        /// price
+        /// </summary>
+        /// <param name="size">size of side</param>
+        /// <param name="price">name of side</param>
         [Theory]
         [InlineData(Size.Small, 0.42)]
         [InlineData(Size.Medium, 0.76)]
@@ -50,6 +64,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(price, wf.Price);
         }
 
+        /// <summary>
+        /// calories
+        /// </summary>
+        /// <param name="size">size of side</param>
+        /// <param name="calories">calories in side</param>
         [Theory]
         [InlineData(Size.Small, 77)]
         [InlineData(Size.Medium, 89)]
@@ -61,6 +80,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(calories, wf.Calories);
         }
 
+        /// <summary>
+        /// to string
+        /// </summary>
+        /// <param name="size">size of side</param>
+        /// <param name="name">name ofside</param>
         [Theory]
         [InlineData(Size.Small, "Small Dragonborn Waffle Fries")]
         [InlineData(Size.Medium, "Medium Dragonborn Waffle Fries")]

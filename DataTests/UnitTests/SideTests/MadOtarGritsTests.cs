@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Bhargav Marada
  * Class: MadOtarGritsTests.cs
  * Purpose: Test the MadOtarGrits.cs class in the Data library
  */
@@ -13,13 +13,19 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class MadOtarGritsTests
     {
+        /// <summary>
+        /// size small
+        /// </summary>
         [Fact]
         public void ShouldBeSmallByDefault()
         {
             MadOtarGrits mog = new MadOtarGrits();
             Assert.Equal(Size.Small, mog.Size);
         }
-                
+
+        /// <summary>
+        /// change size
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
@@ -31,14 +37,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             mog.Size = Size.Small;
             Assert.Equal(Size.Small, mog.Size);
         }
-
+        /// <summary>
+        /// special instructions
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectStringOnSpecialInstructions()
         {
             MadOtarGrits mog = new MadOtarGrits();
             Assert.Empty(mog.SpecialInstructions);
         }
-
+        /// <summary>
+        /// price
+        /// </summary>
+        /// <param name="size">size of side</param>
+        /// <param name="price">price of stride</param>
         [Theory]
         [InlineData(Size.Small, 1.22)]
         [InlineData(Size.Medium, 1.58)]
@@ -50,6 +62,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(price, mog.Price);
         }
 
+        /// <summary>
+        /// calories
+        /// </summary>
+        /// <param name="size">size of side</param>
+        /// <param name="calories">calories in side</param>
         [Theory]
         [InlineData(Size.Small, 105)]
         [InlineData(Size.Medium, 142)]
@@ -61,6 +78,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(calories, mog.Calories);
         }
 
+        /// <summary>
+        /// to string
+        /// </summary>
+        /// <param name="size"size of side></param>
+        /// <param name="name">name of side</param>
         [Theory]
         [InlineData(Size.Small, "Small Mad Otar Grits")]
         [InlineData(Size.Medium, "Medium Mad Otar Grits")]

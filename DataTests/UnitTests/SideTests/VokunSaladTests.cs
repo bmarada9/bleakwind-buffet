@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Bhargav Marada
  * Class: VokunSaladTests.cs
  * Purpose: Test the VokunSalad.cs class in the Data library
  */
@@ -13,13 +13,18 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class VokunSaladTests
     {
+        /// <summary>
+        /// size is small
+        /// </summary>
         [Fact]
         public void ShouldBeSmallByDefault()
         {
             VokunSalad vs = new VokunSalad();
             Assert.Equal(Size.Small, vs.Size);
         }
-
+        /// <summary>
+        /// change size
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
@@ -31,14 +36,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             vs.Size = Size.Small;
             Assert.Equal(Size.Small, vs.Size);
         }
-
+        /// <summary>
+        /// special instructions
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectSpecialInstructions()
         {
             VokunSalad vs = new VokunSalad();
             Assert.Empty(vs.SpecialInstructions);
         }
-
+        /// <summary>
+        /// price
+        /// </summary>
+        /// <param name="size">size of side</param>
+        /// <param name="price">price of side</param>
         [Theory]
         [InlineData(Size.Small, 0.93)]
         [InlineData(Size.Medium, 1.28)]
@@ -49,7 +60,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             vs.Size = size;
             Assert.Equal(price, vs.Price);
         }
-
+        /// <summary>
+        /// calories in side
+        /// </summary>
+        /// <param name="size">size of side</param>
+        /// <param name="calories">calories in side</param>
         [Theory]
         [InlineData(Size.Small, 41)]
         [InlineData(Size.Medium, 52)]
@@ -60,7 +75,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             vs.Size = size;
             Assert.Equal(calories, vs.Calories);
         }
-
+        /// <summary>
+        /// to string
+        /// </summary>
+        /// <param name="size">size of side</param>
+        /// <param name="name">name of side</param>
         [Theory]
         [InlineData(Size.Small, "Small Vokun Salad")]
         [InlineData(Size.Medium, "Medium Vokun Salad")]

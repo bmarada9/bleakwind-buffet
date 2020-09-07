@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Bhargav Marada
  * Class: CandlehearthCoffeeTests.cs
  * Purpose: Test the CandlehearthCoffee.cs class in the Data library
  */
@@ -14,6 +14,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class CandlehearthCoffeeTests
     {
+        /// <summary>
+        /// no ice
+        /// </summary>
         [Fact]
         public void ShouldNotIncludeIceByDefault()
         {
@@ -21,6 +24,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.False(cc.Ice);
         }
 
+        /// <summary>
+        /// not decaf
+        /// </summary>
         [Fact]
         public void ShouldNotBeDecafByDefault()
         {
@@ -28,6 +34,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.False(cc.Decaf);
         }
 
+        /// <summary>
+        /// no cream
+        /// </summary>
         [Fact]
         public void ShouldNotHaveRoomForCreamByDefault()
         {
@@ -35,6 +44,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.False(cc.RoomForCream);
         }
 
+        /// <summary>
+        /// size small
+        /// </summary>
         [Fact]
         public void ShouldBeSmallByDefault()
         {
@@ -42,6 +54,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Equal(Size.Small, cc.Size);
         }
 
+        /// <summary>
+        /// add ice
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetIce()
         {
@@ -52,6 +67,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.False(cc.Ice);
         }
 
+        /// <summary>
+        /// make it decaf
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetDecaf()
         {
@@ -62,6 +80,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.False(cc.Decaf);
         }
 
+        /// <summary>
+        /// add cream
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetRoomForCream()
         {
@@ -72,6 +93,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.False(cc.RoomForCream);
         }
 
+        /// <summary>
+        /// change size
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
@@ -84,6 +108,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Equal(Size.Small, cc.Size);
         }
 
+        /// <summary>
+        /// correct prices
+        /// </summary>
+        /// <param name="size">size of drink</param>
+        /// <param name="price">price of drink</param>
         [Theory]
         [InlineData(Size.Small, 0.75)]
         [InlineData(Size.Medium, 1.25)]
@@ -95,6 +124,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Equal(price, cc.Price);
         }
 
+        /// <summary>
+        /// calories in drink
+        /// </summary>
+        /// <param name="size">size of drink</param>
+        /// <param name="cal">calries in the drink</param>
         [Theory]
         [InlineData(Size.Small, 7)]
         [InlineData(Size.Medium, 10)]
@@ -106,6 +140,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Equal(cal, cc.Calories);
         }
 
+        /// <summary>
+        /// correct special instructions
+        /// </summary>
+        /// <param name="includeIce"> add ice</param>
+        /// <param name="includeCream">add cream</param>
         [Theory]
         [InlineData(true, true)]
         [InlineData(true, false)]
@@ -126,6 +165,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             else Assert.Empty(cc.SpecialInstructions);
         }
 
+        /// <summary>
+        /// to string
+        /// </summary>
+        /// <param name="decaf">decaf or not decaf</param>
+        /// <param name="size">size of drink</param>
+        /// <param name="name">name of drink</param>
         [Theory]
         [InlineData(true, Size.Small, "Small Decaf Candlehearth Coffee")]
         [InlineData(true, Size.Medium, "Medium Decaf Candlehearth Coffee")]

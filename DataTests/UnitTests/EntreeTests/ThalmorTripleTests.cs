@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Bhargav Marada
  * Class: ThalmorTripleTests.cs
  * Purpose: Test the ThalmorTriple.cs class in the Data library
  */
@@ -12,6 +12,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class ThalmorTripleTests
     {
+        /// <summary>
+        /// default bun
+        /// </summary>
         [Fact]
         public void ShouldIncludeBunByDefault()
         {
@@ -19,6 +22,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Bun);
         }
 
+        /// <summary>
+        /// default ketchup
+        /// </summary>
         [Fact]
         public void ShouldIncludeKetchupByDefault()
         {
@@ -26,6 +32,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Ketchup);
         }
 
+        /// <summary>
+        /// default mustard
+        /// </summary>
         [Fact]
         public void ShouldIncludeMustardByDefault()
         {
@@ -33,6 +42,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Mustard);
         }
 
+        /// <summary>
+        /// default pickle
+        /// </summary>
         [Fact]
         public void ShouldIncludePickleByDefault()
         {
@@ -40,6 +52,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Pickle);
         }
 
+        /// <summary>
+        /// default cheese
+        /// </summary>
         [Fact]
         public void ShouldIncludeCheeseByDefault()
         {
@@ -47,6 +62,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Cheese);
         }
 
+        /// <summary>
+        /// default tomato
+        /// </summary>
         [Fact]
         public void ShouldIncludeTomatoByDefault()
         {
@@ -54,6 +72,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Tomato);
         }
 
+        /// <summary>
+        /// default lettuce
+        /// </summary>
         [Fact]
         public void ShouldIncludeLettuceByDefault()
         {
@@ -61,6 +82,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Lettuce);
         }
 
+        /// <summary>
+        /// default mayo
+        /// </summary>
         [Fact]
         public void ShouldIncludeMayoByDefault()
         {
@@ -68,6 +92,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Mayo);
         }
 
+        /// <summary>
+        /// default bacon
+        /// </summary>
         [Fact]
         public void ShouldIncludeBaconByDefault()
         {
@@ -75,6 +102,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Bacon);
         }
 
+        /// <summary>
+        /// default egg
+        /// </summary>
         [Fact]
         public void ShouldIncludeEggByDefault()
         {
@@ -82,6 +112,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Egg);
         }
 
+        /// <summary>
+        /// choose if you want a bun
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetBun()
         {
@@ -92,6 +125,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(tt.Bun);
         }
 
+        /// <summary>
+        /// choose if you want ketchup
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetKetchup()
         {
@@ -102,6 +138,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(tt.Ketchup);
         }
 
+        /// <summary>
+        /// choose if you want mustard
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetMustard()
         {
@@ -112,6 +151,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(tt.Mustard);
         }
 
+        /// <summary>
+        /// choose if you want a pickle
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetPickle()
         {
@@ -122,6 +164,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(tt.Pickle);
         }
 
+        /// <summary>
+        /// choose if you want cheese
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetCheese()
         {
@@ -132,6 +177,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(tt.Cheese);
         }
 
+        /// <summary>
+        /// choose if you want a tomato
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetTomato()
         {
@@ -142,6 +190,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(tt.Tomato);
         }
 
+        /// <summary>
+        /// choose if you want lettuce
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetLettuce()
         {
@@ -152,6 +203,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(tt.Lettuce);
         }
 
+        /// <summary>
+        /// choose if you want mayo
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetMayo()
         {
@@ -162,6 +216,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(tt.Mayo);
         }
 
+        /// <summary>
+        /// choose if you want bacon
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetBacon()
         {
@@ -172,6 +229,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(tt.Bacon);
         }
 
+        /// <summary>
+        /// choose if you want egg
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetEgg()
         {
@@ -182,6 +242,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(tt.Egg);
         }
 
+        /// <summary>
+        /// creturns the price
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectPrice()
         {
@@ -189,6 +252,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal(8.32, tt.Price);
         }
 
+        /// <summary>
+        /// calories
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectCalories()
         {
@@ -196,6 +262,19 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal(943u, tt.Calories);
         }
 
+        /// <summary>
+        /// special instrutions
+        /// </summary>
+        /// <param name="includeBun">bun</param>
+        /// <param name="includeKetchup">ketchup</param>
+        /// <param name="includeMustard">mustard</param>
+        /// <param name="includePickle">pickles</param>
+        /// <param name="includeCheese"cheese></param>
+        /// <param name="includeTomato">tomato</param>
+        /// <param name="includeLettuce">lettuce</param>
+        /// <param name="includeMayo">mayo</param>
+        /// <param name="includeBacon">bacon</param>
+        /// <param name="includeEgg">egg</param>
         [Theory]
         [InlineData(true, true, true, true, true, true, true, true, true, true)]
         [InlineData(false, false, false, false, false, false, false, false, false, false)]
@@ -233,31 +312,34 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             }
             if (!includeTomato)
             {
-                Assert.Contains("Hold cheese", tt.SpecialInstructions);
+                Assert.Contains("Hold tomato", tt.SpecialInstructions);
                 //instructionCount++;
             }
             if (!includeLettuce)
             {
-                Assert.Contains("Hold cheese", tt.SpecialInstructions);
+                Assert.Contains("Hold lettuce", tt.SpecialInstructions);
                 //instructionCount++;
             }
             if (!includeMayo)
             {
-                Assert.Contains("Hold cheese", tt.SpecialInstructions);
+                Assert.Contains("Hold mayo", tt.SpecialInstructions);
                 //instructionCount++;
             }
             if (!includeBacon)
             {
-                Assert.Contains("Hold cheese", tt.SpecialInstructions);
+                Assert.Contains("Hold bacon", tt.SpecialInstructions);
                 //instructionCount++;
             }
             if (!includeEgg)
             {
-                Assert.Contains("Hold cheese", tt.SpecialInstructions);
+                Assert.Contains("Hold egg", tt.SpecialInstructions);
                 //instructionCount++;
             }
         }
 
+        /// <summary>
+        /// to string
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectToString()
         {

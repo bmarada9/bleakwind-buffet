@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Bhargav Marada
  * Class: SmokehouseSkeletonTests.cs
  * Purpose: Test the SmokehouseSkeleton.cs class in the Data library
  */
@@ -11,7 +11,10 @@ using BleakwindBuffet.Data.Entrees;
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class SmokehouseSkeletonTests
-    {        
+    {       
+        /// <summary>
+        /// default sausage
+        /// </summary>
         [Fact]
         public void ShouldInlcudeSausageByDefault()
         {
@@ -19,6 +22,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(ss.SausageLink);
         }
 
+        /// <summary>
+        /// default egg
+        /// </summary>
         [Fact]
         public void ShouldInlcudeEggByDefault()
         {
@@ -26,6 +32,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(ss.Egg);
         }
 
+        /// <summary>
+        /// default hash browns
+        /// </summary>
         [Fact]
         public void ShouldInlcudeHashbrownsByDefault()
         {
@@ -33,6 +42,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(ss.HashBrowns);
         }
 
+        /// <summary>
+        /// default pancake
+        /// </summary>
         [Fact]
         public void ShouldInlcudePancakeByDefault()
         {
@@ -40,6 +52,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(ss.Pancake);
         }
 
+        /// <summary>
+        /// choose if you want sausage
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetSausage()
         {
@@ -50,6 +65,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(ss.SausageLink);
         }
 
+        /// <summary>
+        /// choose if you want egg
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetEgg()
         {
@@ -60,6 +78,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(ss.Egg);
         }
 
+        /// <summary>
+        /// choose if you want hashbrowns
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetHashbrowns()
         {
@@ -70,6 +91,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(ss.HashBrowns);
         }
 
+        /// <summary>
+        /// choose if you want pancake
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetPancake()
         {
@@ -80,6 +104,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(ss.Pancake);
         }
 
+        /// <summary>
+        /// price
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectPrice()
         {
@@ -87,6 +114,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal(5.32, ss.Price);
         }
 
+        /// <summary>
+        /// calories
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectCalories()
         {
@@ -94,6 +124,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal(602u, ss.Calories);
         }
 
+        /// <summary>
+        /// special instructions
+        /// </summary>
+        /// <param name="includeSausage">hold sausage</param>
+        /// <param name="includeEgg">hold egg</param>
+        /// <param name="includeHashbrowns">hold hash browns</param>
+        /// <param name="includePancake">hold pancake</param>
         [Theory]
         [InlineData(true, true, true, true)]
         [InlineData(false, false, false, false)]
@@ -107,6 +144,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             if (!includePancake) Assert.Contains("Hold pancakes", ss.SpecialInstructions);
         }
 
+        /// <summary>
+        /// to string
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectToString()
         {

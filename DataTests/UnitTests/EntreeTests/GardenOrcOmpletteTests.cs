@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Bhargav Marada
  * Class: GardenOrcOmeletteTests.cs
  * Purpose: Test the GardenOrcOmelette.cs class in the Data library
  */
@@ -12,6 +12,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class GardenOrcOmeletteTests
     {
+        /// <summary>
+        /// default brocoli
+        /// </summary>
         [Fact]
         public void ShouldInlcudeBroccoliByDefault()
         {
@@ -19,6 +22,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(go.Broccoli);
         }
 
+        /// <summary>
+        /// default mushrooms
+        /// </summary>
         [Fact]
         public void ShouldInlcudeMushroomsByDefault()
         {
@@ -26,6 +32,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(go.Mushrooms);
         }
 
+        /// <summary>
+        /// default tomato
+        /// </summary>
         [Fact]
         public void ShouldInlcudeTomatoByDefault()
         {
@@ -33,6 +42,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(go.Tomato);
         }
 
+        /// <summary>
+        /// default cheddar
+        /// </summary>
         [Fact]
         public void ShouldInlcudeCheddarByDefault()
         {
@@ -40,6 +52,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(go.Cheddar);
         }
 
+        /// <summary>
+        /// choose to have broccoli
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetBroccoli()
         {
@@ -50,6 +65,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(go.Broccoli);
         }
 
+        /// <summary>
+        /// choose to have mushrooms
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetMushrooms()
         {
@@ -60,6 +78,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(go.Mushrooms);
         }
 
+        /// <summary>
+        /// choose to have tomato
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetTomato()
         {
@@ -70,6 +91,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(go.Tomato);
         }
 
+        /// <summary>
+        /// choose to have cheddar
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetCheddar()
         {
@@ -80,6 +104,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.False(go.Cheddar);
         }
 
+        /// <summary>
+        /// price
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectPrice()
         {
@@ -87,6 +114,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal(4.57, go.Price);
         }
 
+        /// <summary>
+        /// calories
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectCalories()
         {
@@ -94,6 +124,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal(404u, go.Calories);
         }
 
+        /// <summary>
+        /// special instructions
+        /// </summary>
+        /// <param name="includeBroccoli">hold broccoli</param>
+        /// <param name="includeMushrooms">hold mushrooms</param>
+        /// <param name="includeTomato">hold tomato</param>
+        /// <param name="includeCheddar">hold cheddar</param>
         [Theory]
         [InlineData(true, true, true, true)]
         [InlineData(false, false, false, false)]
@@ -107,6 +144,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             if (!includeCheddar) Assert.Contains("Hold cheddar", go.SpecialInstructions);
         }
 
+        /// <summary>
+        /// to string
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectToString()
         {
