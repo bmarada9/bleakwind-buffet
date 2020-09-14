@@ -8,10 +8,11 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data;
 using Size = BleakwindBuffet.Data.Enums.Size;
+using BleakwindBuffet.Data.Drinks;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class CandlehearthCoffe
+    public class CandlehearthCoffe: IOrderItem
     {
         /// <summary>
         /// Price for the Candlehearth Coffee

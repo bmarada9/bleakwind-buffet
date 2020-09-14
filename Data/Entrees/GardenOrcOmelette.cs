@@ -6,10 +6,11 @@
  using System;
 using System.Collections.Generic;
 using System.Text;
+using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class GardenOrcOmelette
+    public class GardenOrcOmelette:IOrderItem
     {
         /// <summary>
         /// price for  entree

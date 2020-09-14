@@ -6,6 +6,7 @@ using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Sides;
 using Size = BleakwindBuffet.Data.Enums.Size;
+using Flavor = BleakwindBuffet.Data.Enums.SodaFlavor;
 
 namespace BleakwindBuffet.Data
 {
@@ -35,9 +36,65 @@ namespace BleakwindBuffet.Data
                 {
                     Size = s
                 });
+                sides.Add(new FriedMiraak()
+                {
+                    Size = s
+                });
+                sides.Add(new MadOtarGrits()
+                {
+                    Size = s
+                });
+                sides.Add(new VokunSalad()
+                {
+                    Size = s
+                });
             }
 
             return sides;
+        }
+
+        public static IEnumerable<IOrderItem> Drinks()
+        {
+            List<IOrderItem> drinks = new List<IOrderItem>();
+
+            foreach (Size s in Enum.GetValues(typeof(Size)))
+            {
+                drinks.Add(new AretinoAppleJuice(){
+                    Size = s
+                });
+                drinks.Add(new CandlehearthCoffe()
+                {
+                    Size = s
+                });
+                drinks.Add(new MarkarthMilk()
+                {
+                    Size = s
+                });
+                foreach(Flavor f in Enum.GetValues(typeof(Flavor)))
+                {
+                    drinks.Add(new SailorsSoda()
+                    {
+                        Size = s,
+                        Flavor = f
+                    });
+                }
+                
+                drinks.Add(new WarriorWater()
+                {
+                    Size = s
+                });
+            }
+            return drinks;
+        }
+
+        public static IEnumerable<IOrderItem> FullMenu()
+        {
+            List<IOrderItem> fullMenu = new List<IOrderItem>();
+
+            fullMenu.Add((IOrderItem)Entrees());
+            fullMenu.Add((IOrderItem)Drinks());
+            fullMenu.Add((IOrderItem)Sides());
+            return fullMenu;
         }
     }
 }

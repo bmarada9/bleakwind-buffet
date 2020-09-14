@@ -6,10 +6,11 @@
  using System;
 using System.Collections.Generic;
 using System.Text;
+using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class PhillyPoacher
+    public class PhillyPoacher: IOrderItem
     {
         /// <summary>
         /// price for  entree

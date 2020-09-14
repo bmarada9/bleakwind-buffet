@@ -6,12 +6,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using BleakwindBuffet.Data.Sides;
 using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class MadOtarGrits
+    public class MadOtarGrits: IOrderItem
     {
         /// <summary>
         /// Price for the Mad Otar Grits

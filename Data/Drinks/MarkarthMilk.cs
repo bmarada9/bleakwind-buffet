@@ -6,12 +6,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using BleakwindBuffet.Data.Drinks;
 using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class MarkarthMilk
+    public class MarkarthMilk: IOrderItem
     {
         /// <summary>
         /// Price for the MarkarthMilk

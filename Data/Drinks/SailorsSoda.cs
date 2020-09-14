@@ -8,10 +8,11 @@ using System.Collections.Generic;
 using System.Text;
 using SodaFlavor = BleakwindBuffet.Data.Enums.SodaFlavor;
 using Size = BleakwindBuffet.Data.Enums.Size;
+using BleakwindBuffet.Data.Drinks;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class SailorsSoda
+    public class SailorsSoda: IOrderItem
     {
         
         /// <summary>

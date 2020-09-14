@@ -6,12 +6,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using BleakwindBuffet.Data.Drinks;
 
 using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class WarriorWater
+    public class WarriorWater: IOrderItem
     {
         /// <summary>
         /// Price for the Warrior Water
