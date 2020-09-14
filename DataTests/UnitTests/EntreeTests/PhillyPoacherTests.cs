@@ -113,7 +113,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectSpecialInstructions(bool includeSirloin, bool includeOnion,
                                                             bool includeRoll)
         {
-            PhillyPoacher pp = new PhillyPoacher();
+            PhillyPoacher pp = new PhillyPoacher() { Sirloin = includeSirloin, Onion = includeOnion, Roll = includeRoll};
             if (!includeSirloin) Assert.Contains("Hold sirloin", pp.SpecialInstructions);
             if (!includeOnion) Assert.Contains("Hold onion", pp.SpecialInstructions);
             if (!includeRoll) Assert.Contains("Hold roll", pp.SpecialInstructions);

@@ -137,7 +137,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectSpecialInstructions(bool includeSausage, bool includeEgg,
                                                             bool includeHashbrowns, bool includePancake)
         {
-            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            SmokehouseSkeleton ss = new SmokehouseSkeleton() { SausageLink = includeSausage, Egg = includeEgg, HashBrowns = includeHashbrowns, Pancake = includePancake};
             if (!includeSausage) Assert.Contains("Hold sausage", ss.SpecialInstructions);
             if (!includeEgg) Assert.Contains("Hold egg", ss.SpecialInstructions);
             if (!includeHashbrowns) Assert.Contains("Hold hash browns", ss.SpecialInstructions);

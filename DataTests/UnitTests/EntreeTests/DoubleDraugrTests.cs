@@ -233,7 +233,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
                                                                     bool includePickle, bool includeCheese, bool includeTomato,
                                                                     bool includeLettuce, bool includeMayo)
         {
-            DoubleDraugr dd = new DoubleDraugr();
+            DoubleDraugr dd = new DoubleDraugr() { Bun = includeBun, Ketchup = includeKetchup, Mustard = includeMustard, Pickle = includePickle, Cheese = includeCheese, Tomato = includeTomato, Lettuce = includeLettuce, Mayo = includeMayo };
             if (!includeBun) Assert.Contains("Hold bun", dd.SpecialInstructions);
             if (!includeKetchup) Assert.Contains("Hold ketchup", dd.SpecialInstructions);
             if (!includeMustard) Assert.Contains("Hold mustard", dd.SpecialInstructions);

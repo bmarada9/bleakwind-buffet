@@ -137,7 +137,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectSpecialInstructions(bool includeBroccoli, bool includeMushrooms,
                                                             bool includeTomato, bool includeCheddar)
         {
-            GardenOrcOmelette go = new GardenOrcOmelette();
+            GardenOrcOmelette go = new GardenOrcOmelette() { Broccoli = includeBroccoli, Mushrooms = includeMushrooms, Tomato = includeTomato, Cheddar = includeCheddar};
             if (!includeBroccoli) Assert.Contains("Hold broccoli", go.SpecialInstructions);
             if (!includeMushrooms) Assert.Contains("Hold mushrooms", go.SpecialInstructions);
             if (!includeTomato) Assert.Contains("Hold tomato", go.SpecialInstructions);

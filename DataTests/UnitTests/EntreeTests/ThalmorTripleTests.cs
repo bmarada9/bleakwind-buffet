@@ -283,7 +283,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
                                                                     bool includeLettuce, bool includeMayo,
                                                                     bool includeBacon, bool includeEgg)
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            ThalmorTriple tt = new ThalmorTriple() { Bun = includeBun, Ketchup = includeKetchup, Mustard = includeMustard, Pickle = includePickle, Cheese = includeCheese, Tomato = includeTomato, Lettuce = includeLettuce, Mayo = includeMayo, Bacon = includeBacon, Egg = includeEgg };
             //int instructionCount = 0;
             if (!includeBun)
             {
