@@ -4,6 +4,7 @@
  * Purpose: a class to represent the Briarheart Burger
  */
 
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,17 +12,17 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class BriarheartBurger
+    public class BriarheartBurger: Entree
     {
         /// <summary>
         /// price for  entree
         /// </summary>
-        public double Price { get; } = 6.32;
+        public override double Price { get; } = 6.32; 
 
         /// <summary>
         /// calories for  entree
         /// </summary>
-        public uint Calories { get; } = 743;
+        public override uint Calories { get; } = 743;
 
         /// <summary>
         /// Bun on  entree
@@ -47,7 +48,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// special instructions for  entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

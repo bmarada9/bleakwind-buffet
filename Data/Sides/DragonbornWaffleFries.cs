@@ -11,7 +11,7 @@ using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class DragonBornWaffleFries
+    public class DragonBornWaffleFries: IOrderItem
     {
         /// <summary>
         /// Price for the DragonBorn Waffle Fries
