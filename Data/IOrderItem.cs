@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Bhargav Marada
+ * Class name: IOrderItem.cs
+ * Purpose: an interface which contains the following propertie
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data;
