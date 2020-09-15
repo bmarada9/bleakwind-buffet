@@ -153,5 +153,25 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             GardenOrcOmelette go = new GardenOrcOmelette();
             Assert.NotNull(go.ToString());
         }
+
+        /// <summary>
+        /// Checks if Entree class is abstract
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToAbstractDrinkClass()
+        {
+            var bar = new GardenOrcOmelette();
+            Assert.IsAssignableFrom<Entree>(bar);
+        }
+
+        /// <summary>
+        /// checks if all items can be cast to their base class
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToIOrderItem()
+        {
+            var bar = new GardenOrcOmelette();
+            Assert.IsAssignableFrom<IOrderItem>(bar);
+        }
     }
 }

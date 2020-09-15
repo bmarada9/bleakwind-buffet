@@ -12,12 +12,14 @@ using BleakwindBuffet.Data.Drinks;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class AretinoAppleJuice: IOrderItem
+    public class AretinoAppleJuice: Drink, IOrderItem
     {
+        
+
         /// <summary>
         /// Price for the Arentino Apple Juice
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -31,7 +33,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Calories for the Arentino Apple Juice
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -51,12 +53,12 @@ namespace BleakwindBuffet.Data.Drinks
         // <summary>
         /// size of drink 
         /// </summary>
-        public Size Size { get; set; } = Size.Small;
+        public override Size Size { get; set; } = Size.Small;
 
         // <summary>
         /// special instructions for drink 
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -93,5 +93,25 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             mog.Size = size;
             Assert.Equal(name, mog.ToString());
         }
+
+        /// <summary>
+        /// Checks if Side class is abstract
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToAbstractDrinkClass()
+        {
+            var bar = new MadOtarGrits();
+            Assert.IsAssignableFrom<Side>(bar);
+        }
+
+        /// <summary>
+        /// checks if all items can be cast to their base class
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToIOrderItem()
+        {
+            var bar = new MadOtarGrits();
+            Assert.IsAssignableFrom<IOrderItem>(bar);
+        }
     }
 }

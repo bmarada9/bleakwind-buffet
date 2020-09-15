@@ -186,5 +186,25 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             //if(decaf) Assert.Equal(name, cc.ToString());
             Assert.Equal(name, cc.ToString());
         }
+
+        /// <summary>
+        /// Checks if the Drink class is abstract
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToAbstractDrinkClass()
+        {
+            var bar = new CandlehearthCoffe();
+            Assert.IsAssignableFrom<Drink>(bar);
+        }
+
+        /// <summary>
+        /// checks if all items can be cast to their base class
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToIOrderItem()
+        {
+            var bar = new CandlehearthCoffe();
+            Assert.IsAssignableFrom<IOrderItem>(bar);
+        }
     }
 }

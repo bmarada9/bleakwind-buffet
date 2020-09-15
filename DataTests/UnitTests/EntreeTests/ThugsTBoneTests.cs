@@ -51,5 +51,25 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             ThugsTBone tb = new ThugsTBone();
             Assert.NotNull(tb.ToString());
         }
+
+        /// <summary>
+        /// Checks if Entree class is abstract
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToAbstractDrinkClass()
+        {
+            var bar = new ThugsTBone();
+            Assert.IsAssignableFrom<Entree>(bar);
+        }
+
+        /// <summary>
+        /// checks if all items can be cast to their base class
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToIOrderItem()
+        {
+            var bar = new ThugsTBone();
+            Assert.IsAssignableFrom<IOrderItem>(bar);
+        }
     }
 }

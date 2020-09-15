@@ -3,13 +3,12 @@
  * Class: SailorSodaTests.cs
  * Purpose: Test the SailorSoda.cs class in the Data library
  */
-using System;
-
 using Xunit;
 
 using BleakwindBuffet.Data;
-using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Drinks;
+//using Bleakwindbuffet.Data.Drinks;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -141,5 +140,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             
             Assert.Equal(name, ww.ToString());
         }
+
+        /// <summary>
+        /// Checks if the Drink class is abstract
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToAbstractDrinkClass()
+        {
+            var bar = new WarriorWater();
+            Assert.IsAssignableFrom<Drink>(bar);
+        }
+
+        /// <summary>
+        /// checks if all items can be cast to their base class
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToIOrderItem()
+        {
+            var bar = new WarriorWater();
+            Assert.IsAssignableFrom<IOrderItem>(bar);
+        }
     }
 }
+

@@ -11,13 +11,13 @@ using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class FriedMiraak: IOrderItem
+    public class FriedMiraak: Side, IOrderItem
     {
 
         /// <summary>
         /// Price for the Fried Miraak
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -31,7 +31,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Calories for the Fried Miraak
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -47,12 +47,12 @@ namespace BleakwindBuffet.Data.Sides
         // <summary>
         /// size of side 
         /// </summary>
-        public Size Size { get; set; } = Size.Small;
+        public override Size Size { get; set; } = Size.Small;
 
         // <summary>
         /// special instructions for side 
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

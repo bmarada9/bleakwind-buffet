@@ -200,5 +200,25 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             BriarheartBurger bb = new BriarheartBurger();
             Assert.NotNull(bb.ToString());
         }
+
+        /// <summary>
+        /// Checks if Entree class is abstract
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToAbstractDrinkClass()
+        {
+            var bar = new BriarheartBurger();
+            Assert.IsAssignableFrom<Entree>(bar);
+        }
+
+        /// <summary>
+        /// checks if all items can be cast to their base class
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToIOrderItem()
+        {
+            var bar = new BriarheartBurger();
+            Assert.IsAssignableFrom<IOrderItem>(bar);
+        }
     }
 }

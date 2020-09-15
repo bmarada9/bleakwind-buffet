@@ -10,21 +10,21 @@ using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class ThugsTBone: IOrderItem
+    public class ThugsTBone: Entree, IOrderItem
     {
         /// <summary>
         /// price for  entree
         /// </summary>
-        public double Price { get; } = 6.44;
+        public override double Price { get; } = 6.44;
         /// <summary>
         /// Calories for  entree
         /// </summary>
-        public uint Calories { get; } = 982;
+        public override uint Calories { get; } = 982;
 
         /// <summary>
         /// special instructions for  entree
         /// </summary>
-        public List<String> SpecialInstructions
+        public override List<String> SpecialInstructions
         {
             get
             {

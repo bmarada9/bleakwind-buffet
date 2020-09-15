@@ -10,16 +10,16 @@ using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class GardenOrcOmelette:IOrderItem
+    public class GardenOrcOmelette: Entree, IOrderItem
     {
         /// <summary>
         /// price for  entree
         /// </summary>
-        public double Price { get; } = 4.57;
+        public override double Price { get; } = 4.57;
         /// <summary>
         /// Calories for  entree
         /// </summary>
-        public uint Calories { get; } = 404;
+        public override uint Calories { get; } = 404;
         /// <summary>
         /// Broccoli on  entree
         /// </summary>
@@ -40,7 +40,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// special instructions for  entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

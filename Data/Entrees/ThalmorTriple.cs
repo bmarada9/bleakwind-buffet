@@ -10,16 +10,16 @@ using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class ThalmorTriple: IOrderItem
+    public class ThalmorTriple: Entree, IOrderItem
     {
         /// <summary>
         /// price for  entree
         /// </summary>
-        public double Price { get; } = 8.32;
+        public override double Price { get; } = 8.32;
         /// <summary>
         /// calories for  entree
         /// </summary>
-        public uint Calories { get; } = 943;
+        public override uint Calories { get; } = 943;
         /// <summary>
         /// Bun on  entree
         /// </summary>
@@ -64,7 +64,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// special instructions for  entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
