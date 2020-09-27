@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="PointOfSale.AllItems"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Label Content="Add to Order" HorizontalAlignment="Left" Width="133" Margin="257,36,0,368" FontSize="18" FontFamily="Times New Roman"/>
+
+        <Button x:Name="BriarheartBurger" Content="Briarheart Burger" HorizontalAlignment="Left" Margin="27,84,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF080808" Background="#FF59EA22" Click="BriarheartBurger_Click"/>
+
+        <Button x:Name="SailorSoda" Content="Sailor Soda" HorizontalAlignment="Left" Margin="257,304,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" Background="#FF0CBCF0"/>
+        <Button x:Name="DoubleDraugr" Content="Double Draugr" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,139,0,0" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF080808" Background="#FF59EA22"/>
+        <Button x:Name="MarkathMilk" Content="Markath Milk" HorizontalAlignment="Left" Margin="257,84,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" Background="#FF0CBCF0"/>
+        <Button x:Name="CandlehearthCoffee" Content="Candlehearth Coffee" HorizontalAlignment="Left" Margin="257,194,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" Background="#FF0CBCF0"/>
+        <Button x:Name="AretinoAppleJuice" Content="Aretino Apple Juice" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,139,0,0" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" Background="#FF0CBCF0"/>
+        <Button x:Name="VokunSalad" Content="Vokun Salad" HorizontalAlignment="Left" Margin="472,84,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" Foreground="Black" Background="#FFCF80E0">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0F0F0F" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="MadOtarGrits" Content="Mad Otar Grits" HorizontalAlignment="Left" Margin="472,194,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" Foreground="Black" Background="#FFCF80E0">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0F0F0F" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="FriedMirak" Content="Fried Mirak" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="472,139,0,0" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" Foreground="Black" Background="#FFCF80E0">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0F0F0F" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="ThalmorTriple" Content="Thalmor Triple" HorizontalAlignment="Left" Margin="27,194,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF080808" Background="#FF59EA22"/>
+        <Button x:Name="GardenOrcOmlete" Content="Garden Orc Omlette" HorizontalAlignment="Left" Margin="27,304,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF080808" Background="#FF59EA22"/>
+        <Button x:Name="SmokehouseSkeleton" Content="Smokehouse Skeleton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,249,0,0" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF080808" Background="#FF59EA22"/>
+        <Button x:Name="WariorWater" Content="Warrior Water" HorizontalAlignment="Left" Margin="257,249,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" Background="#FF0CBCF0"/>
+        <Button x:Name="DragonBornWaffleFries" Content="Dragonborn Waffle Fries" HorizontalAlignment="Left" Margin="472,249,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" Foreground="Black" Background="#FFCF80E0">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0F0F0F" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="ThugsTBone" Content="Thugs T-Bone" HorizontalAlignment="Left" Margin="27,359,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF080808" Background="#FF59EA22"/>
+    </Grid>
+</UserControl>
