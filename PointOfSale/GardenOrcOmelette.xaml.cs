@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for BriarheartBurger.xaml
+    /// Interaction logic for GardenOrcOmelette.xaml
     /// </summary>
-    public partial class BriarheartBurger : UserControl
+    public partial class GardenOrcOmelette : UserControl
     {
-        public BriarheartBurger()
+        public GardenOrcOmelette()
         {
             InitializeComponent();
         }

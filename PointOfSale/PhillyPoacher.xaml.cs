@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for BriarheartBurger.xaml
+    /// Interaction logic for PhillyPoacher.xaml
     /// </summary>
-    public partial class BriarheartBurger : UserControl
+    public partial class PhillyPoacher : UserControl
     {
-        public BriarheartBurger()
+        public PhillyPoacher()
         {
             InitializeComponent();
         }
@@ -27,6 +27,7 @@ namespace PointOfSale
         {
             var Control = this.FindAncestor<Control>();
             Control.ChangeScreen(new AllItems());
+
         }
     }
 }

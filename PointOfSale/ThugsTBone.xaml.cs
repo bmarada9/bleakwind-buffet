@@ -14,19 +14,20 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for BriarheartBurger.xaml
+    /// Interaction logic for ThugsTBone.xaml
     /// </summary>
-    public partial class BriarheartBurger : UserControl
+    public partial class ThugsTBone : UserControl
     {
-        public BriarheartBurger()
+        public ThugsTBone()
         {
             InitializeComponent();
         }
 
-        public void Done_Click(object sender, RoutedEventArgs e)
+        private void Done_Click(object sender, RoutedEventArgs e)
         {
             var Control = this.FindAncestor<Control>();
             Control.ChangeScreen(new AllItems());
+
         }
     }
 }
