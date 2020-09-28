@@ -68,25 +68,25 @@ namespace PointOfSale
         private void AretinoAppleJuice_Click(object sender, RoutedEventArgs e)
         {
             var Control = this.FindAncestor<Control>();
-            Control.ChangeScreen(new Aretino());
+            Control.ChangeScreen(new AretinoAppleJuice());
         }
 
         private void CandlehearthCoffee_Click(object sender, RoutedEventArgs e)
         {
             var Control = this.FindAncestor<Control>();
-            Control.ChangeScreen(new Candlehearth());
+            Control.ChangeScreen(new CandlehearthCoffee());
         }
 
         private void WariorWater_Click(object sender, RoutedEventArgs e)
         {
             var Control = this.FindAncestor<Control>();
-            Control.ChangeScreen(new WariorWater());
+            Control.ChangeScreen(new WarriorWater());
         }
 
         private void SailorSoda_Click(object sender, RoutedEventArgs e)
         {
             var Control = this.FindAncestor<Control>();
-            Control.ChangeScreen(new SailorSoda());
+            Control.ChangeScreen(new SailorsSoda());
         }
 
         private void VokunSalad_Click(object sender, RoutedEventArgs e)
@@ -98,7 +98,7 @@ namespace PointOfSale
         private void FriedMirak_Click(object sender, RoutedEventArgs e)
         {
             var Control = this.FindAncestor<Control>();
-            Control.ChangeScreen(new FriedMirak());
+            Control.ChangeScreen(new FriedMiraak());
         }
 
         private void MadOtarGrits_Click(object sender, RoutedEventArgs e)
@@ -110,7 +110,7 @@ namespace PointOfSale
         private void DragonBornWaffleFries_Click(object sender, RoutedEventArgs e)
         {
             var Control = this.FindAncestor<Control>();
-            Control.ChangeScreen(new DragonBornWaffleFries());
+            Control.ChangeScreen(new DragonbornWaffleFries());
         }
 
         private void PhillyPoacher_Click(object sender, RoutedEventArgs e)
