@@ -21,6 +21,7 @@ namespace PointOfSale
         public GardenOrcOmelette()
         {
             InitializeComponent();
+            DataContext = new BleakwindBuffet.Data.Entrees.GardenOrcOmelette();
         }
 
         public void Done_Click(object sender, RoutedEventArgs e)

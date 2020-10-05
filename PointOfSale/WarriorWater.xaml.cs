@@ -21,6 +21,7 @@ namespace PointOfSale
         public WarriorWater()
         {
             InitializeComponent();
+            DataContext = new BleakwindBuffet.Data.Drinks.WarriorWater();
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)

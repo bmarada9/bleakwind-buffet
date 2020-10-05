@@ -21,6 +21,7 @@ namespace PointOfSale
         public PhillyPoacher()
         {
             InitializeComponent();
+            DataContext = new BleakwindBuffet.Data.Entrees.PhillyPoacher();
         }
 
         public void Done_Click(object sender, RoutedEventArgs e)

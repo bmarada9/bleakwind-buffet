@@ -21,6 +21,7 @@ namespace PointOfSale
         public FriedMiraak()
         {
             InitializeComponent();
+            DataContext = new BleakwindBuffet.Data.Sides.FriedMiraak();
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)

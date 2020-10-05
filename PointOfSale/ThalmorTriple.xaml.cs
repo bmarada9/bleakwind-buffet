@@ -21,6 +21,7 @@ namespace PointOfSale
         public ThalmorTriple()
         {
             InitializeComponent();
+            DataContext = new BleakwindBuffet.Data.Entrees.ThalmorTriple();
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)

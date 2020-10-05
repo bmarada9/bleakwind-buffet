@@ -21,6 +21,7 @@ namespace PointOfSale
         public CandlehearthCoffee()
         {
             InitializeComponent();
+            DataContext = new BleakwindBuffet.Data.Drinks.CandlehearthCoffe();
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)

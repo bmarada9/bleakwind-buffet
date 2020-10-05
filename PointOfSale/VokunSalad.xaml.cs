@@ -21,6 +21,7 @@ namespace PointOfSale
         public VokunSalad()
         {
             InitializeComponent();
+            DataContext = new BleakwindBuffet.Data.Sides.VokunSalad();
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)

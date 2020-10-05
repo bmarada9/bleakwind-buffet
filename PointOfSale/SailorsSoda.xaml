@@ -10,17 +10,17 @@
         <Rectangle Stroke="Black" RenderTransformOrigin="3.798,0.492" Margin="660,25,10,10"/>
         <Label Content="Sailors Soda" HorizontalAlignment="Left" Width="179" Margin="257,36,0,368" FontSize="18" FontFamily="Times New Roman"/>
         <TextBlock HorizontalAlignment="Center" Height="30" Margin="660,36,0,0" Text="Current Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Times New Roman" FontSize="18"/>
-        <CheckBox Content="Small" HorizontalAlignment="Left" Height="25" Margin="49,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <CheckBox Content="Large" HorizontalAlignment="Left" Height="25" Margin="274,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <CheckBox Content="Medium" HorizontalAlignment="Left" Height="25" Margin="169,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <CheckBox Content="Blackberry" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="115" Margin="49,180,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <CheckBox Content="Cherry" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="169,180,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <CheckBox Content="Grapefruit" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="126" Margin="274,180,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <CheckBox Content="Add Ice" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="49,281,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <CheckBox Content="lemon" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="49,208,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Small" IsChecked="{Binding Path= Size}" HorizontalAlignment="Left" Height="25" Margin="49,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Large" IsChecked="{Binding Path= Size}" HorizontalAlignment="Left" Height="25" Margin="274,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Medium" IsChecked="{Binding Path= Size}" HorizontalAlignment="Left" Height="25" Margin="169,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Blackberry" IsChecked="{Binding Path= SodaFlavor}" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="115" Margin="49,180,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Cherry" IsChecked="{Binding Path= SodaFlavor}" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="169,180,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Grapefruit" IsChecked="{Binding Path= SodaFlavor}" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="126" Margin="274,180,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Add Ice" IsChecked="{Binding Path= ice}" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="49,281,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="lemon" IsChecked="{Binding Path= SodaFlavor}" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="49,208,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
         <Button x:Name="Done" Content="Done" HorizontalAlignment="Left" Margin="476,390,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" Click="Done_Click"/>
-        <CheckBox Content="Peach" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="169,208,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <CheckBox Content="Watermelon" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="126" Margin="274,208,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Peach" IsChecked="{Binding Path= SodaFlavor}" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="169,208,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Watermelon" IsChecked="{Binding Path= SodaFlavor}" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="126" Margin="274,208,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
         <Button x:Name="AddToOrder" Content ="Add To Order" HorizontalAlignment="Left" Margin="294,390,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" Click="Done_Click"/>
 
     </Grid>

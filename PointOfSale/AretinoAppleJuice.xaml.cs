@@ -21,7 +21,7 @@ namespace PointOfSale
         public AretinoAppleJuice()
         {
             InitializeComponent();
-            DataContext = new AretinoAppleJuice();
+            DataContext = new BleakwindBuffet.Data.Drinks.AretinoAppleJuice();
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)

@@ -21,6 +21,7 @@ namespace PointOfSale
         public ThugsTBone()
         {
             InitializeComponent();
+            DataContext = new BleakwindBuffet.Data.Entrees.ThugsTBone();
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)

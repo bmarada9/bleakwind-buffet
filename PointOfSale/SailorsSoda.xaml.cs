@@ -21,6 +21,7 @@ namespace PointOfSale
         public SailorsSoda()
         {
             InitializeComponent();
+            DataContext = new BleakwindBuffet.Data.Drinks.SailorsSoda();
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)

@@ -21,6 +21,7 @@ namespace PointOfSale
         public MadOtarGrits()
         {
             InitializeComponent();
+            DataContext = new BleakwindBuffet.Data.Sides.MadOtarGrits();
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)

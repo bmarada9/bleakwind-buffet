@@ -10,14 +10,14 @@
         <Rectangle Stroke="Black" RenderTransformOrigin="3.798,0.492" Margin="660,25,10,10"/>
         <Label Content="Thalmor Triple" HorizontalAlignment="Left" Width="179" Margin="257,36,0,368" FontSize="18" FontFamily="Times New Roman"/>
         <TextBlock HorizontalAlignment="Center" Height="30" Margin="660,36,0,0" Text="Current Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Times New Roman" FontSize="18"/>
-        <CheckBox Content="Bun" HorizontalAlignment="Left" Height="25" Margin="49,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <CheckBox Content="Ketchup" HorizontalAlignment="Left" Height="25" Margin="274,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <CheckBox Content="Mustard" HorizontalAlignment="Left" Height="25" Margin="150,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <CheckBox Content="Pickle" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="49,180,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <CheckBox Content="Cheese" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="150,180,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <CheckBox Content="Tomato" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="274,180,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <CheckBox Content="Lettuce" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="49,210,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <CheckBox Content="Mayo" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="150,210,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Bun" IsChecked="{Binding Path= Bun1}" HorizontalAlignment="Left" Height="25" Margin="49,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Ketchup" IsChecked="{Binding Path= Ketchup1}" HorizontalAlignment="Left" Height="25" Margin="274,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Mustard" IsChecked="{Binding Path= Mustard11}" HorizontalAlignment="Left" Height="25" Margin="150,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Pickle" IsChecked="{Binding Path= Pickle1}" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="49,180,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Cheese" IsChecked="{Binding Path= Cheese1}" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="150,180,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Tomato" IsChecked="{Binding Path= Tomato1}" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="274,180,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Lettuce" IsChecked="{Binding Path= Lettuce1}" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="49,210,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Mayo" IsChecked="{Binding Path= Mayo1}" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="150,210,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
         <Button x:Name="Done" Content="Done" HorizontalAlignment="Left" Margin="476,390,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" Click="Done_Click"/>
         <Button x:Name="AddToOrder" Content ="Add To Order" HorizontalAlignment="Left" Margin="294,390,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" Click="Done_Click"/>
 

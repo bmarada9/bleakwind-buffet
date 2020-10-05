@@ -21,6 +21,7 @@ namespace PointOfSale
         public DoubleDraugr()
         {
             InitializeComponent();
+            DataContext = new BleakwindBuffet.Data.Entrees.DoubleDraugr();
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)

@@ -21,6 +21,7 @@ namespace PointOfSale
         public DragonbornWaffleFries()
         {
             InitializeComponent();
+            DataContext = new BleakwindBuffet.Data.Sides.DragonBornWaffleFries(); 
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)

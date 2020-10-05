@@ -21,6 +21,7 @@ namespace PointOfSale
         public SmokehouseSkeleton()
         {
             InitializeComponent();
+            DataContext = new BleakwindBuffet.Data.Entrees.SmokehouseSkeleton();
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)

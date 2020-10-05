@@ -21,6 +21,7 @@ namespace PointOfSale
         public MarkathMilk()
         {
             InitializeComponent();
+            DataContext = new BleakwindBuffet.Data.Drinks.MarkarthMilk();
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)
