@@ -9,11 +9,14 @@ using System.Text;
 using BleakwindBuffet.Data;
 using Size = BleakwindBuffet.Data.Enums.Size;
 using BleakwindBuffet.Data.Drinks;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class CandlehearthCoffe: Drink, IOrderItem
+    public class CandlehearthCoffe: Drink, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Price for the Candlehearth Coffee
         /// </summary>
@@ -47,20 +50,62 @@ namespace BleakwindBuffet.Data.Drinks
         /// ice in drink 
         /// </summary>
         public bool Ice { get; set; } = false;
+        public bool ice
+        {
+            get { return Ice; }
+            set
+            {
+                Ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         // <summary>
         /// cream in drink 
         /// </summary>
         public bool RoomForCream { get; set; } = false;
+        public bool Cream
+        {
+            get { return RoomForCream; }
+            set
+            {
+                RoomForCream = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cream"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         // <summary>
         /// decaf drink 
         /// </summary>
         public bool Decaf { get; set; } = false;
-
+        public bool decaf
+        {
+            get { return Decaf; }
+            set
+            {
+                Decaf = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         // <summary>
         /// size of drink 
         /// </summary>
-        public override Size Size { get; set; } = Size.Small;
-
+        public Size size = Size.Small;
+        // <summary>
+        /// size of drink 
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
+        }
         // <summary>
         /// special instructions for drink 
         /// </summary>

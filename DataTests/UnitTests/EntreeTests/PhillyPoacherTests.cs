@@ -148,5 +148,69 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var bar = new PhillyPoacher();
             Assert.IsAssignableFrom<IOrderItem>(bar);
         }
+
+        /// <summary>
+        /// Checks if sirloin property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingSirloinNotifiesSirloinProperty()
+        {
+            var pp = new PhillyPoacher();
+            Assert.PropertyChanged(pp, "Sirloin", () =>
+            {
+                pp.Sirloin1 = true;
+            });
+
+            Assert.PropertyChanged(pp, "Sirloin", () =>
+            {
+                pp.Sirloin1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if onion property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingOnionNotifiesOnionProperty()
+        {
+            var pp = new PhillyPoacher();
+            Assert.PropertyChanged(pp, "Onion", () =>
+            {
+                pp.Onion1 = true;
+            });
+
+            Assert.PropertyChanged(pp, "Onion", () =>
+            {
+                pp.Onion1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if roll property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingRollNotifiesRollProperty()
+        {
+            var pp = new PhillyPoacher();
+            Assert.PropertyChanged(pp, "Roll", () =>
+            {
+                pp.Roll1 = true;
+            });
+
+            Assert.PropertyChanged(pp, "Roll", () =>
+            {
+                pp.Roll1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Implements the INotify Property Change
+        /// </summary>
+        [Fact]
+        public void ImplementsINotifyPropertyChange()
+        {
+            var pp = new PhillyPoacher();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(pp);
+        }
     }
 }

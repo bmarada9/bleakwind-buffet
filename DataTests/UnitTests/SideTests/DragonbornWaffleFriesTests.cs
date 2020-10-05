@@ -115,5 +115,57 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             var bar = new DragonBornWaffleFries();
             Assert.IsAssignableFrom<IOrderItem>(bar);
         }
+
+        /// <summary>
+        /// changes the size property
+        /// </summary>
+        /// <param name="size"></param>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesSizeProperty(Size size)
+        {
+            var wf = new DragonBornWaffleFries();
+            Assert.PropertyChanged(wf, "Size", () => wf.Size = size);
+        }
+
+        /// <summary>
+        /// changes the calories property
+        /// </summary>
+        /// <param name="size"></param>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesCaloriesProperty(Size size)
+        {
+            var wf = new DragonBornWaffleFries();
+            Assert.PropertyChanged(wf, "Calories", () => wf.Size = size);
+        }
+
+        /// <summary>
+        /// changes the price property
+        /// </summary>
+        /// <param name="size"></param>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesPriceProperty(Size size)
+        {
+            var wf = new DragonBornWaffleFries();
+            Assert.PropertyChanged(wf, "Price", () => wf.Size = size);
+        }
+
+        /// <summary>
+        /// Implements the INotify Property Change
+        /// </summary>
+        [Fact]
+        public void ImplementsINotifyPropertyChange()
+        {
+            var wf = new DragonBornWaffleFries();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(wf);
+        }
     }
 }

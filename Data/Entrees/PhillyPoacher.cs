@@ -7,11 +7,13 @@
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Entrees;
-
+using System.ComponentModel;
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class PhillyPoacher: Entree, IOrderItem
+    public class PhillyPoacher: Entree, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// price for  entree
         /// </summary>
@@ -24,14 +26,44 @@ namespace BleakwindBuffet.Data.Entrees
         /// Sirloing on  entree
         /// </summary>
         public bool Sirloin { get; set; } = true;
+        public bool Sirloin1
+        {
+            get { return Sirloin; }
+            set
+            {
+                Sirloin = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sirloin"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <summary>
         /// Onion on  entree
         /// </summary>
         public bool Onion { get; set; } = true;
+        public bool Onion1
+        {
+            get { return Onion; }
+            set
+            {
+                Onion = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Onion"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <summary>
         /// Roll on  entree
         /// </summary>
         public bool Roll { get; set; } = true;
+        public bool Roll1
+        {
+            get { return Roll; }
+            set
+            {
+                Roll = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Roll"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
         /// special instructions for  entree

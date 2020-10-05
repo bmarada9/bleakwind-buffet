@@ -193,8 +193,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldBeAssignableToAbstractDrinkClass()
         {
-            var bar = new CandlehearthCoffe();
-            Assert.IsAssignableFrom<Drink>(bar);
+            var cc = new CandlehearthCoffe();
+            Assert.IsAssignableFrom<Drink>(cc);
         }
 
         /// <summary>
@@ -203,8 +203,111 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldBeAssignableToIOrderItem()
         {
-            var bar = new CandlehearthCoffe();
-            Assert.IsAssignableFrom<IOrderItem>(bar);
+            var cc = new CandlehearthCoffe();
+            Assert.IsAssignableFrom<IOrderItem>(cc);
+        }
+
+        /// <summary>
+        /// Checks if ice property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var cc = new CandlehearthCoffe();
+            Assert.PropertyChanged(cc, "Ice", () =>
+            {
+                cc.ice = true;
+            });
+
+            Assert.PropertyChanged(cc, "Ice", () =>
+            {
+                cc.ice = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if cream property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingCreamNotifiesCreamProperty()
+        {
+            var cc = new CandlehearthCoffe();
+            Assert.PropertyChanged(cc, "Cream", () =>
+            {
+                cc.Cream = true;
+            });
+
+            Assert.PropertyChanged(cc, "Cream", () =>
+            {
+                cc.Cream = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if decaf property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingDecafNotifiesDecafProperty()
+        {
+            var cc = new CandlehearthCoffe();
+            Assert.PropertyChanged(cc, "Decaf", () =>
+            {
+                cc.decaf = true;
+            });
+
+            Assert.PropertyChanged(cc, "Decaf", () =>
+            {
+                cc.decaf = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if size property is notified
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesSizeProperty(Size size)
+        {
+            var cc = new CandlehearthCoffe();
+            Assert.PropertyChanged(cc, "Size", () => cc.Size = size);
+        }
+
+        /// <summary>
+        /// Checks if calories property is notified
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesCaloriesProperty(Size size)
+        {
+            var cc = new CandlehearthCoffe();
+            Assert.PropertyChanged(cc, "Calories", () => cc.Size = size);
+        }
+
+        /// <summary>
+        /// Checks if price property is notified
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesPriceProperty(Size size)
+        {
+            var cc = new CandlehearthCoffe();
+            Assert.PropertyChanged(cc, "Price", () => cc.Size = size);
+        }
+
+        /// <summary>
+        /// Implements the INotify Property Change
+        /// </summary>
+        [Fact]
+        public void ImplementsINotifyPropertyChange()
+        {
+            var cc = new CandlehearthCoffe();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(cc);
         }
     }
 }

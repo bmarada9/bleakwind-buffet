@@ -173,5 +173,87 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var bar = new GardenOrcOmelette();
             Assert.IsAssignableFrom<IOrderItem>(bar);
         }
+
+        /// <summary>
+        /// Checks if broccoli property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingBroccoliNotifiesBroccoliProperty()
+        {
+            var go = new GardenOrcOmelette();
+            Assert.PropertyChanged(go, "Broccoli", () =>
+            {
+                go.Broccoli1 = true;
+            });
+
+            Assert.PropertyChanged(go, "Broccoli", () =>
+            {
+                go.Broccoli1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if mushrooms property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingMushroomsNotifiesMushroomsProperty()
+        {
+            var go = new GardenOrcOmelette();
+            Assert.PropertyChanged(go, "Mushrooms", () =>
+            {
+                go.Mushroom = true;
+            });
+
+            Assert.PropertyChanged(go, "Mushrooms", () =>
+            {
+                go.Mushroom = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if tomato property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingTomatoNotifiesTomatoProperty()
+        {
+            var go = new GardenOrcOmelette();
+            Assert.PropertyChanged(go, "Tomato", () =>
+            {
+                go.Tomato1 = true;
+            });
+
+            Assert.PropertyChanged(go, "Tomato", () =>
+            {
+                go.Tomato1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if cheddar property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingCheddarNotifiesCheedarProperty()
+        {
+            var go = new GardenOrcOmelette();
+            Assert.PropertyChanged(go, "Cheddar", () =>
+            {
+                go.Cheddar1 = true;
+            });
+
+            Assert.PropertyChanged(go, "Cheddar", () =>
+            {
+                go.Cheddar1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Implements the INotify Property Change
+        /// </summary>
+        [Fact]
+        public void ImplementsINotifyPropertyChange()
+        {
+            var go = new GardenOrcOmelette();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(go);
+        }
     }
 }

@@ -7,11 +7,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class SmokehouseSkeleton: Entree, IOrderItem
+    public class SmokehouseSkeleton: Entree, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// price for  entree
         /// </summary>
@@ -24,18 +27,58 @@ namespace BleakwindBuffet.Data.Entrees
         /// sausage link on  entree
         /// </summary>
         public bool SausageLink { get; set; } = true;
+        public bool SausageLink1
+        {
+            get { return SausageLink; }
+            set
+            {
+                SausageLink = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sausage Link"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <summary>
         /// egg on  entree
         /// </summary>
         public bool Egg { get; set; } = true;
+        public bool Egg1
+        {
+            get { return Egg; }
+            set
+            {
+                Egg = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <summary>
         /// hashbrowns on  entree
         /// </summary>
         public bool HashBrowns { get; set; } = true;
+        public bool HashBrowns1
+        {
+            get { return HashBrowns; }
+            set
+            {
+                HashBrowns = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HashBrowns"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <summary>
         /// pancakes on  entree
         /// </summary>
         public bool Pancake { get; set; } = true;
+        public bool Pancake1
+        {
+            get { return Pancake; }
+            set
+            {
+                Pancake = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pancake"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
         /// special instructions for  entree

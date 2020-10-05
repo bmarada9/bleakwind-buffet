@@ -21,6 +21,7 @@ namespace PointOfSale
         public BriarheartBurger()
         {
             InitializeComponent();
+            DataContext = new BleakwindBuffet.Data.Entrees.BriarheartBurger();
         }
 
         public void Done_Click(object sender, RoutedEventArgs e)

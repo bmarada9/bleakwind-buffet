@@ -145,5 +145,76 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             var bar = new AretinoAppleJuice();
             Assert.IsAssignableFrom<IOrderItem>(bar);
         }
+
+        /// <summary>
+        /// Checks if ice property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var aj = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(aj, "Ice", () =>
+            {
+                aj.Ice = true;
+            });
+
+            Assert.PropertyChanged(aj, "Ice", () =>
+            {
+                aj.Ice = false;
+            });
+        }
+
+        /// <summary>
+        /// Changes the size property
+        /// </summary>
+        /// <param name="size"></param>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesSizeProperty(Size size)
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aj, "Size", () => aj.Size = size);
+        }
+
+        /// <summary>
+        /// Changes the Calories property
+        /// </summary>
+        /// <param name="size"></param>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesCaloriesProperty(Size size)
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aj, "Calories", () => aj.Size = size);
+        }
+
+        /// <summary>
+        /// Changes the price properyt
+        /// </summary>
+        /// <param name="size"></param>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesPriceProperty(Size size)
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aj, "Price", () => aj.Size = size);
+        }
+
+        /// <summary>
+        /// Implements the INotify Property Change
+        /// </summary>
+        [Fact]
+        public void ImplementsINotifyPropertyChange()
+        {
+            AretinoAppleJuice bb = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(bb);
+        }
     }
 }

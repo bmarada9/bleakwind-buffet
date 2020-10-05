@@ -147,8 +147,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldBeAssignableToAbstractDrinkClass()
         {
-            var bar = new WarriorWater();
-            Assert.IsAssignableFrom<Drink>(bar);
+            var ww = new WarriorWater();
+            Assert.IsAssignableFrom<Drink>(ww);
         }
 
         /// <summary>
@@ -157,9 +157,97 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldBeAssignableToIOrderItem()
         {
-            var bar = new WarriorWater();
-            Assert.IsAssignableFrom<IOrderItem>(bar);
+            var ww = new WarriorWater();
+            Assert.IsAssignableFrom<IOrderItem>(ww);
         }
+
+        /// <summary>
+        /// Checks if ice property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var ww = new WarriorWater();
+
+            Assert.PropertyChanged(ww, "Ice", () =>
+            {
+                ww.ice = true;
+            });
+
+            Assert.PropertyChanged(ww, "Ice", () =>
+            {
+                ww.ice = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if lemon property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingLemonNotifiesLemonProperty()
+        {
+            var ww = new WarriorWater();
+
+            Assert.PropertyChanged(ww, "Lemon", () =>
+            {
+                ww.lemon = true;
+            });
+
+            Assert.PropertyChanged(ww, "Lemon", () =>
+            {
+                ww.lemon = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if size property is notified
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesSizeProperty(Size size)
+        {
+            var ww = new WarriorWater();
+            Assert.PropertyChanged(ww, "Size", () => ww.Size = size);
+        }
+
+        /// <summary>
+        /// Checks if calories property is notified
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesCaloriesProperty(Size size)
+        {
+            var ww = new WarriorWater();
+            Assert.PropertyChanged(ww, "Calories", () => ww.Size = size);
+        }
+
+        /// <summary>
+        /// Checks if price property is notified
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesPriceProperty(Size size)
+        {
+            var ww = new WarriorWater();
+            Assert.PropertyChanged(ww, "Price", () => ww.Size = size);
+        }
+
+        /// <summary>
+        /// Implements the INotify Property Change
+        /// </summary>
+        [Fact]
+        public void ImplementsINotifyPropertyChange()
+        {
+            var ww = new WarriorWater();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(ww);
+        }
+
     }
 }
 

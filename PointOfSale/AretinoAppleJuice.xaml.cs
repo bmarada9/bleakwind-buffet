@@ -21,6 +21,7 @@ namespace PointOfSale
         public AretinoAppleJuice()
         {
             InitializeComponent();
+            DataContext = new AretinoAppleJuice();
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)

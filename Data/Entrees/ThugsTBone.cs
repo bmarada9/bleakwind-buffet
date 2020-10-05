@@ -7,11 +7,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Entrees;
-
+using System.ComponentModel;
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class ThugsTBone: Entree, IOrderItem
+    public class ThugsTBone: Entree, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// price for  entree
         /// </summary>

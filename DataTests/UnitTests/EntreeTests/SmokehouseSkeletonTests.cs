@@ -173,5 +173,87 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var bar = new SmokehouseSkeleton();
             Assert.IsAssignableFrom<IOrderItem>(bar);
         }
+
+        /// <summary>
+        /// Checks if sausage property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingSausageLinkNotifiesSausageLinkProperty()
+        {
+            var ss = new SmokehouseSkeleton();
+            Assert.PropertyChanged(ss, "Sausage Link", () =>
+            {
+                ss.SausageLink1 = true;
+            });
+
+            Assert.PropertyChanged(ss, "Sausage Link", () =>
+            {
+                ss.SausageLink1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if egg property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingEggNotifiesEggProperty()
+        {
+            var ss = new SmokehouseSkeleton();
+            Assert.PropertyChanged(ss, "Egg", () =>
+            {
+                ss.Egg1 = true;
+            });
+
+            Assert.PropertyChanged(ss, "Egg", () =>
+            {
+                ss.Egg1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if hashbrowns property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingHashBrownNotifiesHashBrownProperty()
+        {
+            var ss = new SmokehouseSkeleton();
+            Assert.PropertyChanged(ss, "HashBrowns", () =>
+            {
+                ss.HashBrowns1 = true;
+            });
+
+            Assert.PropertyChanged(ss, "HashBrowns", () =>
+            {
+                ss.HashBrowns1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if pancake property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingPancakeNotifiesPancakeProperty()
+        {
+            var ss = new SmokehouseSkeleton();
+            Assert.PropertyChanged(ss, "Pancake", () =>
+            {
+                ss.Pancake1 = true;
+            });
+
+            Assert.PropertyChanged(ss, "Pancake", () =>
+            {
+                ss.Pancake1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Implements the INotify Property Change
+        /// </summary>
+        [Fact]
+        public void ImplementsINotifyPropertyChange()
+        {
+            var ss = new SmokehouseSkeleton();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(ss);
+        }
     }
 }

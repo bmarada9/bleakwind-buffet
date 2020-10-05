@@ -130,8 +130,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldBeAssignableToAbstractDrinkClass()
         {
-            var bar = new MarkarthMilk();
-            Assert.IsAssignableFrom<Drink>(bar);
+            MarkarthMilk mm = new MarkarthMilk();
+            Assert.IsAssignableFrom<Drink>(mm);
         }
 
         /// <summary>
@@ -140,8 +140,76 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldBeAssignableToIOrderItem()
         {
-            var bar = new MarkarthMilk();
-            Assert.IsAssignableFrom<IOrderItem>(bar);
+            MarkarthMilk mm = new MarkarthMilk();
+            Assert.IsAssignableFrom<IOrderItem>(mm);
+        }
+
+        /// <summary>
+        /// Checks if ice property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+
+            Assert.PropertyChanged(mm, "Ice", () =>
+            {
+                mm.ice = true;
+            });
+
+            Assert.PropertyChanged(mm, "Ice", () =>
+            {
+                mm.ice = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if lesizemon property is notified
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesSizeProperty(Size size)
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+            Assert.PropertyChanged(mm, "Size", () => mm.Size = size);
+        }
+
+        /// <summary>
+        /// Checks if calories property is notified
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesCaloriesProperty(Size size)
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+            Assert.PropertyChanged(mm, "Calories", () => mm.Size = size);
+        }
+
+        /// <summary>
+        /// Checks if prcie property is notified
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesPriceProperty(Size size)
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+            Assert.PropertyChanged(mm, "Price", () => mm.Size = size);
+        }
+
+        /// <summary>
+        /// Implements the INotify Property Change
+        /// </summary>
+        [Fact]
+        public void ImplementsINotifyPropertyChange()
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(mm);
         }
     }
 }

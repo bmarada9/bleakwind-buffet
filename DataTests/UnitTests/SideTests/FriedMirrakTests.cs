@@ -115,5 +115,57 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             var bar = new FriedMiraak();
             Assert.IsAssignableFrom<IOrderItem>(bar);
         }
+
+        /// <summary>
+        /// changes the size property
+        /// </summary>
+        /// <param name="size"></param>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesSizeProperty(Size size)
+        {
+            var fm = new FriedMiraak();
+            Assert.PropertyChanged(fm, "Size", () => fm.Size = size);
+        }
+
+        /// <summary>
+        /// changes the calories property
+        /// </summary>
+        /// <param name="size"></param>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesCaloriesProperty(Size size)
+        {
+            var fm = new FriedMiraak();
+            Assert.PropertyChanged(fm, "Calories", () => fm.Size = size);
+        }
+
+        /// <summary>
+        /// changes the price property
+        /// </summary>
+        /// <param name="size"></param>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesPriceProperty(Size size)
+        {
+            var fm = new FriedMiraak();
+            Assert.PropertyChanged(fm, "Price", () => fm.Size = size);
+        }
+
+        /// <summary>
+        /// Implements the INotify Property Change
+        /// </summary>
+        [Fact]
+        public void ImplementsINotifyPropertyChange()
+        {
+            var fm = new FriedMiraak();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(fm);
+        }
     }
 }

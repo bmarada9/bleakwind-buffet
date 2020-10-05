@@ -71,5 +71,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var bar = new ThugsTBone();
             Assert.IsAssignableFrom<IOrderItem>(bar);
         }
+
+        /// <summary>
+        /// Implements the INotify Property Change
+        /// </summary>
+        [Fact]
+        public void ImplementsINotifyPropertyChange()
+        {
+            var tb = new ThugsTBone();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(tb);
+        }
     }
 }

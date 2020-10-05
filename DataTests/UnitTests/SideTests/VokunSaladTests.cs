@@ -110,5 +110,57 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             var bar = new VokunSalad();
             Assert.IsAssignableFrom<IOrderItem>(bar);
         }
+
+        /// <summary>
+        /// changes the size property
+        /// </summary>
+        /// <param name="size"></param>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesSizeProperty(Size size)
+        {
+            var vs = new MadOtarGrits();
+            Assert.PropertyChanged(vs, "Size", () => vs.Size = size);
+        }
+
+        /// <summary>
+        /// changes the calories property
+        /// </summary>
+        /// <param name="size"></param>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesCaloriesProperty(Size size)
+        {
+            var vs = new MadOtarGrits();
+            Assert.PropertyChanged(vs, "Calories", () => vs.Size = size);
+        }
+
+        /// <summary>
+        /// changes the price property
+        /// </summary>
+        /// <param name="size"></param>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesPriceProperty(Size size)
+        {
+            var vs = new MadOtarGrits();
+            Assert.PropertyChanged(vs, "Price", () => vs.Size = size);
+        }
+
+        /// <summary>
+        /// Implements the INotify Property Change
+        /// </summary>
+        [Fact]
+        public void ImplementsINotifyPropertyChange()
+        {
+            var vs = new MadOtarGrits();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(vs);
+        }
     }
 }

@@ -198,5 +198,94 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             var bar = new SailorsSoda();
             Assert.IsAssignableFrom<IOrderItem>(bar);
         }
+
+        /// <summary>
+        /// Checks if ice property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var ss = new SailorsSoda();
+
+            Assert.PropertyChanged(ss, "Ice", () =>
+            {
+                ss.ice = true;
+            });
+
+            Assert.PropertyChanged(ss, "Ice", () =>
+            {
+                ss.ice = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if flavor property is notified
+        /// </summary>
+        [Theory]
+        [InlineData(SodaFlavor.Cherry)]
+        [InlineData(SodaFlavor.Blackberry)]
+        [InlineData(SodaFlavor.Grapefruit)]
+        [InlineData(SodaFlavor.Lemon)]
+        [InlineData(SodaFlavor.Peach)]
+        [InlineData(SodaFlavor.Watermelon)]
+        public void ChangingFlavorNotifiesFlavorProperty(SodaFlavor flavor)
+        {
+            var ss = new SailorsSoda();
+
+            Assert.PropertyChanged(ss, "Flavor", () =>
+            {
+                ss.SodaFlavor = flavor;
+            });
+        }
+
+        /// <summary>
+        /// Checks if size property is notified
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesSizeProperty(Size size)
+        {
+            var ss = new SailorsSoda();
+            Assert.PropertyChanged(ss, "Size", () => ss.Size = size);
+        }
+
+        /// <summary>
+        /// Checks if calories property is notified
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesCaloriesProperty(Size size)
+        {
+            var ss = new SailorsSoda();
+            Assert.PropertyChanged(ss, "Calories", () => ss.Size = size);
+        }
+
+        /// <summary>
+        /// Checks if price property is notified
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesPriceProperty(Size size)
+        {
+            var ss = new SailorsSoda();
+            Assert.PropertyChanged(ss, "Price", () => ss.Size = size);
+        }
+
+        /// <summary>
+        /// Implements the INotify Property Change
+        /// </summary>
+        [Fact]
+        public void ImplementsINotifyPropertyChange()
+        {
+            var ss = new SailorsSoda();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(ss);
+        }
+
     }
 }

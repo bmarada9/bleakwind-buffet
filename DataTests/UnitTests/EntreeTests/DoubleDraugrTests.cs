@@ -273,5 +273,159 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var bar = new DoubleDraugr();
             Assert.IsAssignableFrom<IOrderItem>(bar);
         }
+
+        /// <summary>
+        /// Checks if bun property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingBunNotifiesBunProperty()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Bun", () =>
+            {
+                dd.Bun1 = true;
+            });
+
+            Assert.PropertyChanged(dd, "Bun", () =>
+            {
+                dd.Bun1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if ketchup property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingKetchupNotifiesKetchupProperty()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Ketchup", () =>
+            {
+                dd.Ketchup1 = true;
+            });
+
+            Assert.PropertyChanged(dd, "Ketchup", () =>
+            {
+                dd.Ketchup1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if Mustard property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingMustardNotifiesMustardProperty()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Mustard", () =>
+            {
+                dd.Mustard1 = true;
+            });
+
+            Assert.PropertyChanged(dd, "Mustard", () =>
+            {
+                dd.Mustard1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if Pickles property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingPicklesNotifiesPicklesProperty()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Pickle", () =>
+            {
+                dd.Pickle1 = true;
+            });
+
+            Assert.PropertyChanged(dd, "Pickle", () =>
+            {
+                dd.Pickle1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if cheese property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingCheeseNotifiesCheeseProperty()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Cheese", () =>
+            {
+                dd.Cheese1 = true;
+            });
+
+            Assert.PropertyChanged(dd, "Cheese", () =>
+            {
+                dd.Cheese1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if tomato property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingTomatoNotifiesTomatoProperty()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Tomato", () =>
+            {
+                dd.Tomato1 = true;
+            });
+
+            Assert.PropertyChanged(dd, "Tomato", () =>
+            {
+                dd.Tomato1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if lettuce property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingLettuceNotifiesLettuceProperty()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Lettuce", () =>
+            {
+                dd.Lettuce1 = true;
+            });
+
+            Assert.PropertyChanged(dd, "Lettuce", () =>
+            {
+                dd.Lettuce1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks if mayo property is notified
+        /// </summary>
+        [Fact]
+        public void ChangingMayoNotifiesMayoProperty()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Mayo", () =>
+            {
+                dd.Mayo1 = true;
+            });
+
+            Assert.PropertyChanged(dd, "Mayo", () =>
+            {
+                dd.Mayo1 = false;
+            });
+        }
+
+        /// <summary>
+        /// Implements the INotify Property Change
+        /// </summary>
+        [Fact]
+        public void ImplementsINotifyPropertyChange()
+        {
+            var dd = new DoubleDraugr();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(dd);
+        }
     }
 }
