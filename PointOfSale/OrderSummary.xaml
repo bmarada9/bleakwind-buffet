@@ -9,10 +9,10 @@
     <Grid>
         <ListBox HorizontalAlignment="Left" Height="399" Margin="651,0,0,0" VerticalAlignment="Center" Width="139" BorderBrush="#FF060606"/>
         <TextBlock HorizontalAlignment="Center" Height="30" Margin="660,36,0,0" Text="Current Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Times New Roman" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="660,66,0,0" Text="Order# : " TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Times New Roman" FontSize="14"/>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="660,359,0,0" Text="SubTotal : " TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Times New Roman" FontSize="14"/>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="660,384,0,0" Text="Tax: : " TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Times New Roman" FontSize="14"/>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="660,409,0,0" Text="Total:  : " TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Times New Roman" FontSize="14"/>
+        <TextBlock x:Name="OrderNumber" HorizontalAlignment="Left" Height="30" Margin="660,66,0,0" Text="{Binding Path= Number}" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Times New Roman" FontSize="14"/>
+        <TextBlock x:Name="SubTotal" HorizontalAlignment="Left" Height="30" Margin="660,359,0,0" Text="{Binding Path= subTotal}" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Times New Roman" FontSize="14"/>
+        <TextBlock x:Name="Tax" HorizontalAlignment="Left" Height="30" Margin="660,384,0,0" Text="{Binding Path= Tax}" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Times New Roman" FontSize="14"/>
+        <TextBlock x:Name="Total" HorizontalAlignment="Left" Height="30" Margin="660,409,0,0" Text="{Binding Path= Total}" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Times New Roman" FontSize="14"/>
 
 
     </Grid>

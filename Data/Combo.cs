@@ -16,6 +16,12 @@ namespace BleakwindBuffet.Data
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public Combo(Entree e, Side s, Drink d)
+        {
+            drink = d;
+            entree = e;
+            side = s;
+        }
         /// price, calories, special instructions
         /// 
         /// <summary>

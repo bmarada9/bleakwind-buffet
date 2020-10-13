@@ -9,21 +9,35 @@ using System.Text;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data;
 using Size = BleakwindBuffet.Data.Enums.Size;
-
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     public abstract class Drink: IOrderItem
     {
-        /// <summary>
-        /// a size getter and setter
-        /// </summary>
-        public abstract Size Size
-        {
-            get;
-            set;
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
+        
+        private Size size = Size.Small;
+        /// <summary>
+        /// The size of the drink
+        /// </summary>
+        public virtual Size Size
+        {
+            get
+            {
+                return size;
+
+            }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Small"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Medium"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Large"));
+
+            }
+        }
         /// <summary>
         /// a price getter
         /// </summary>
@@ -38,5 +52,6 @@ namespace BleakwindBuffet.Data.Drinks
         /// a special instructions getter
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+
     }
 }

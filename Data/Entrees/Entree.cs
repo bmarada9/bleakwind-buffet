@@ -8,11 +8,14 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     public abstract class Entree : IOrderItem
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// a price getter
         /// </summary>

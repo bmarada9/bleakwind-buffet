@@ -7,10 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data
 {
-    public interface IOrderItem
+    public interface IOrderItem: INotifyPropertyChanged
     {
         /// <summary>
         /// Price getter

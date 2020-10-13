@@ -10,7 +10,7 @@
         <Rectangle Stroke="Black" RenderTransformOrigin="3.798,0.492" Margin="660,25,10,10"/>
         <Label Content="Aretino Apple Juice" HorizontalAlignment="Left" Width="179" Margin="257,36,0,368" FontSize="18" FontFamily="Times New Roman"/>
         <TextBlock HorizontalAlignment="Center" Height="30" Margin="660,36,0,0" Text="Current Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Times New Roman" FontSize="18"/>
-        <CheckBox Content="Small" HorizontalAlignment="Left" Height="25" Margin="49,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
+        <CheckBox Content="Small"  HorizontalAlignment="Left" Height="25" Margin="49,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
         <CheckBox Content="Large" HorizontalAlignment="Left" Height="25" Margin="274,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
         <CheckBox Content="Medium" HorizontalAlignment="Left" Height="25" Margin="150,150,0,0" VerticalAlignment="Top" Width="100" FontFamily="Baskerville Old Face" FontSize="20"/>
         <CheckBox Content="Add Ice" IsChecked="{Binding Path= Ice}" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="49,210,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>

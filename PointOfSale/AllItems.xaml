@@ -61,7 +61,6 @@
         <Button x:Name="ThugsTBone" Content="Thugs T-Bone" HorizontalAlignment="Left" Margin="27,359,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF080808" Background="#FF59EA22" Click="ThugsTBone_Click"/>
         <Button x:Name="PhillyPoacher" Content="Philly Poacher" HorizontalAlignment="Left" Margin="27,414,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF080808" Background="#FF59EA22" Click="PhillyPoacher_Click"/>
 
-        <Button x:Name="AddToOrder" Content ="Add To Order" HorizontalAlignment="Left" Margin="301,424,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" />
         <Button x:Name="Cancel" Content ="Cancel Order" HorizontalAlignment="Left" Margin="482,424,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" />
 
 
