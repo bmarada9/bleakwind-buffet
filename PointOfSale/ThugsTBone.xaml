@@ -11,7 +11,7 @@
         <Label Content="Thugs T-Bone" HorizontalAlignment="Left" Width="179" Margin="257,36,0,368" FontSize="18" FontFamily="Times New Roman"/>
         <TextBlock HorizontalAlignment="Center" Height="30" Margin="660,36,0,0" Text="Current Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Times New Roman" FontSize="18"/>
         <Button x:Name="Done" Content="Done" HorizontalAlignment="Left" Margin="476,390,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" Click="Done_Click"/>
-        <Button x:Name="AddToOrder" Content ="Add To Order" HorizontalAlignment="Left" Margin="294,390,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" Click="Done_Click"/>
+        <Button x:Name="AddToOrder" Content ="Add To Order" HorizontalAlignment="Left" Margin="294,390,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" Click="AddToOrder_Click"/>
 
     </Grid>
 </UserControl>

@@ -30,5 +30,17 @@ namespace PointOfSale
             Control.ChangeScreen(new AllItems());
 
         }
+
+        public void AddToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var tt = new ThalmorTriple();
+            var triple = new BleakwindBuffet.Data.Entrees.ThalmorTriple();
+            tt.DataContext = triple;
+            this.Content = tt;
+            if (DataContext is BleakwindBuffet.Data.Order order)
+            {
+                order.Add(triple);
+            }
+        }
     }
 }

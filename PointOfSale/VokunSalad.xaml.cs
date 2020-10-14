@@ -30,5 +30,17 @@ namespace PointOfSale
             Control.ChangeScreen(new AllItems());
 
         }
+
+        public void AddToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var vs = new VokunSalad();
+            var salad = new BleakwindBuffet.Data.Sides.VokunSalad();
+            vs.DataContext = salad;
+            this.Content = vs;
+            if (DataContext is BleakwindBuffet.Data.Order order)
+            {
+                order.Add(salad);
+            }
+        }
     }
 }

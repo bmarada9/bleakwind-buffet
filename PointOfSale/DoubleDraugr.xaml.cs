@@ -29,5 +29,17 @@ namespace PointOfSale
             var Control = this.FindAncestor<Control>();
             Control.ChangeScreen(new AllItems());
         }
+
+        public void AddToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var dd = new DoubleDraugr();
+            var draugr = new BleakwindBuffet.Data.Entrees.DoubleDraugr();
+            dd.DataContext = draugr;
+            this.Content = dd;
+            if (DataContext is BleakwindBuffet.Data.Order order)
+            {
+                order.Add(draugr);
+            }
+        }
     }
 }

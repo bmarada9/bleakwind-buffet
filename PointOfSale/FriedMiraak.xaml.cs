@@ -30,5 +30,17 @@ namespace PointOfSale
             Control.ChangeScreen(new AllItems());
 
         }
+
+        public void AddToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var fm = new FriedMiraak();
+            var miraak = new BleakwindBuffet.Data.Sides.FriedMiraak();
+            fm.DataContext = miraak;
+            this.Content = fm;
+            if (DataContext is BleakwindBuffet.Data.Order order)
+            {
+                order.Add(miraak);
+            }
+        }
     }
 }

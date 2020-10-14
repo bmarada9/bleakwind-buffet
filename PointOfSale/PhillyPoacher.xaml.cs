@@ -30,5 +30,17 @@ namespace PointOfSale
             Control.ChangeScreen(new AllItems());
 
         }
+
+        public void AddToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var pp = new PhillyPoacher();
+            var philly = new BleakwindBuffet.Data.Entrees.PhillyPoacher();
+            pp.DataContext = philly;
+            this.Content = pp;
+            if (DataContext is BleakwindBuffet.Data.Order order)
+            {
+                order.Add(philly);
+            }
+        }
     }
 }

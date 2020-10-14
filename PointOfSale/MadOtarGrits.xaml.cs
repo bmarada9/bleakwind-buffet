@@ -30,5 +30,17 @@ namespace PointOfSale
             Control.ChangeScreen(new AllItems());
 
         }
+
+        public void AddToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var mog = new MadOtarGrits();
+            var grits = new BleakwindBuffet.Data.Sides.MadOtarGrits();
+            mog.DataContext = grits;
+            this.Content = mog;
+            if (DataContext is BleakwindBuffet.Data.Order order)
+            {
+                order.Add(grits);
+            }
+        }
     }
 }

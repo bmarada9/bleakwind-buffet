@@ -29,5 +29,17 @@ namespace PointOfSale
             var Control = this.FindAncestor<Control>();
             Control.ChangeScreen(new AllItems());
         }
+
+        public void AddToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var bb = new BriarheartBurger();
+            var burger = new BleakwindBuffet.Data.Entrees.BriarheartBurger();
+            bb.DataContext = burger;
+            this.Content = bb;
+            if (DataContext is BleakwindBuffet.Data.Order order)
+            {
+                order.Add(burger);
+            }
+        }
     }
 }

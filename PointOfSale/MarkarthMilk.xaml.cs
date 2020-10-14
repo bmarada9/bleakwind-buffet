@@ -30,5 +30,17 @@ namespace PointOfSale
             Control.ChangeScreen(new AllItems());
 
         }
+
+        public void AddToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var mm = new MarkathMilk();
+            var milk = new BleakwindBuffet.Data.Drinks.MarkarthMilk();
+            mm.DataContext = milk;
+            this.Content = mm;
+            if (DataContext is BleakwindBuffet.Data.Order order)
+            {
+                order.Add(milk);
+            }
+        }
     }
 }

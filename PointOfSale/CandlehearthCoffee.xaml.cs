@@ -30,5 +30,17 @@ namespace PointOfSale
             Control.ChangeScreen(new AllItems());
 
         }
+
+        public void AddToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var cc = new CandlehearthCoffee();
+            var coffee = new BleakwindBuffet.Data.Drinks.CandlehearthCoffe();
+            cc.DataContext = coffee;
+            this.Content = cc;
+            if (DataContext is BleakwindBuffet.Data.Order order)
+            {
+                order.Add(coffee);
+            }
+        }
     }
 }

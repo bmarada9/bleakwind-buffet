@@ -30,5 +30,17 @@ namespace PointOfSale
             Control.ChangeScreen(new AllItems());
 
         }
+
+        public void AddToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var aa = new AretinoAppleJuice();
+            var juice = new BleakwindBuffet.Data.Drinks.AretinoAppleJuice();
+            aa.DataContext = juice;
+            this.Content = aa;
+            if (DataContext is BleakwindBuffet.Data.Order order)
+            {
+                order.Add(juice);
+            }
+        }
     }
 }

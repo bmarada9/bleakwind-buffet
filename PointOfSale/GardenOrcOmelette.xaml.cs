@@ -29,5 +29,17 @@ namespace PointOfSale
             var Control = this.FindAncestor<Control>();
             Control.ChangeScreen(new AllItems());
         }
+
+        public void AddToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var go = new GardenOrcOmelette();
+            var omelette = new BleakwindBuffet.Data.Entrees.GardenOrcOmelette();
+            go.DataContext = omelette;
+            this.Content = go;
+            if (DataContext is BleakwindBuffet.Data.Order order)
+            {
+                order.Add(omelette);
+            }
+        }
     }
 }

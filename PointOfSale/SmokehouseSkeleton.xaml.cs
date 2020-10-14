@@ -30,5 +30,17 @@ namespace PointOfSale
             Control.ChangeScreen(new AllItems());
 
         }
+
+        public void AddToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var ss = new SmokehouseSkeleton();
+            var smoke = new BleakwindBuffet.Data.Entrees.SmokehouseSkeleton();
+            ss.DataContext = smoke;
+            this.Content = ss;
+            if (DataContext is BleakwindBuffet.Data.Order order)
+            {
+                order.Add(smoke);
+            }
+        }
     }
 }

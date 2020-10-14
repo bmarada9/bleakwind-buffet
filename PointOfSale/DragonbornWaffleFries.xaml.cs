@@ -30,5 +30,17 @@ namespace PointOfSale
             Control.ChangeScreen(new AllItems());
 
         }
+
+        public void AddToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var wf = new DragonbornWaffleFries();
+            var fries = new BleakwindBuffet.Data.Sides.DragonBornWaffleFries();
+            wf.DataContext = fries;
+            this.Content = wf;
+            if (DataContext is BleakwindBuffet.Data.Order order)
+            {
+                order.Add(fries);
+            }
+        }
     }
 }

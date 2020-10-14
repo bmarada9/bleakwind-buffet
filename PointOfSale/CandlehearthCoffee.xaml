@@ -17,7 +17,7 @@
         <CheckBox Content="Small" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="49,180,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
         <CheckBox Content="Medium" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="150,180,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
         <CheckBox Content="Large" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="274,180,0,0" FontFamily="Baskerville Old Face" FontSize="20"/>
-        <Button x:Name="AddToOrder" Content ="Add To Order" HorizontalAlignment="Left" Margin="294,390,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" Click="Done_Click"/>
+        <Button x:Name="AddToOrder" Content ="Add To Order" HorizontalAlignment="Left" Margin="294,390,0,0" VerticalAlignment="Top" Width="142" Height="50" BorderThickness="2,2,2,2" FontFamily="Baskerville Old Face" FontSize="14" BorderBrush="#FF060606" Click="AddToOrder_Click"/>
 
     </Grid>
 </UserControl>
