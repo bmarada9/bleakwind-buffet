@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Bhargav Marada
+ * Class name: Combo.cs
+ * Purpose: A class to represent different combos
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;

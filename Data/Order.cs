@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Bhargav Marada
+ * Class name: Order.cs
+ * Purpose: A class to represent the customers order
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
@@ -29,6 +34,10 @@ namespace BleakwindBuffet.Data
         }
         List<IOrderItem> items = new List<IOrderItem>();
 
+        /// <summary>
+        /// add item to order
+        /// </summary>
+        /// <param name="order"></param>
         public void Add(IOrderItem order)
         {
             items.Add(order);
@@ -40,6 +49,11 @@ namespace BleakwindBuffet.Data
             order.PropertyChanged += ItemEventChange;
         }
 
+        /// <summary>
+        /// remove item from order
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
         public bool Remove(IOrderItem order)
         {
             bool removeCheck = items.Remove(order);
@@ -52,6 +66,9 @@ namespace BleakwindBuffet.Data
             return removeCheck;
         }
 
+        /// <summary>
+        /// the sales tax rate
+        /// </summary>
         public double SalesTaxRate { get; set; } = 0.12;
 
         public double subTotal;
@@ -67,6 +84,9 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        /// <summary>
+        /// the tax on the order
+        /// </summary>
         public double tax;
         public double Tax
         {
@@ -77,6 +97,9 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        /// <summary>
+        /// the total price of the order
+        /// </summary>
         public double total;
         public double Total
         {
@@ -87,6 +110,9 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        /// <summary>
+        /// the price of the total order
+        /// </summary>
         public uint Calories
         {
             get
@@ -100,9 +126,15 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        /// <summary>
+        /// the order number
+        /// </summary>
         private static int nextOrderNumber = 1;
         public int Number { get; set; } = nextOrderNumber;
 
+        /// <summary>
+        /// clears the order
+        /// </summary>
         public void Clear()
         {
             ((ICollection<IOrderItem>)items).Clear();
@@ -112,6 +144,7 @@ namespace BleakwindBuffet.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
             CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
         }
+
 
         public bool Contains(IOrderItem item)
         {

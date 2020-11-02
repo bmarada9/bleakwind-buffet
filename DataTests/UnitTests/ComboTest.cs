@@ -44,5 +44,25 @@ namespace BleakwindBuffet.DataTests
             Assert.Equal(list, combo.SpecialInstructions);
         }
 
+        [Fact]
+        public void ShouldHaveCorrectPrice()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            DragonBornWaffleFries db = new DragonBornWaffleFries();
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Combo combo = new Combo(bb, db, aj);
+            Assert.Equal(aj.Price + bb.Price + db.Price, combo.Price);
+        }
+        [Fact]
+        public void ShouldHaveCorrectCalories()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            DragonBornWaffleFries db = new DragonBornWaffleFries();
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Combo combo = new Combo(bb, db, aj);
+            Assert.Equal(864, (int)combo.Calories);
+        }
+
+
     }
 }

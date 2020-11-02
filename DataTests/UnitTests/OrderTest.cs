@@ -1,6 +1,11 @@
-﻿/*Author: Katayoun Katy Davoudi
+﻿/*Author: Bhargav Marada
  * Class: OrderTest.cs
  * Purpose: has tests that relate to the order class
+ */
+/*
+ * Author: Bhargav Marada
+ * Class name: OrderTest.cs
+ * Purpose: A test class to test the order.cs class
  */
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;

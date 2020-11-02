@@ -1,0 +1,89 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <h2 class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Bleakwind Buffet <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+        <h1>
+            We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!
+        </h1>
+
+        <h2 class="entree">
+            Entrees:
+
+            @foreach (BleakwindBuffet.Data.IOrderItem entree in BleakwindBuffet.Data.Menu.Entrees())
+            {
+                <li>
+                    <div class="entree">
+                        @if (entree is BleakwindBuffet.Data.IOrderItem)
+                        {
+                            <div class="entree">
+                                @entree
+                                <div>Price: $@entree.Price</div>
+                                <div>Calories: @entree.Calories </div>
+                            </div>
+                        }
+                    </div>
+                </li>
+            }
+        </h2>
+
+        <h2 class="side">
+            Sides:
+
+            @foreach (BleakwindBuffet.Data.IOrderItem sides in BleakwindBuffet.Data.Menu.Sides())
+            {
+                <li>
+                    <div class="side">
+                        @if (sides is BleakwindBuffet.Data.IOrderItem)
+                        {
+                            <div class="side">
+                                @sides
+                                <h2>Price: $@sides.Price</h2>
+                                <h2>Calories: @sides.Calories </h2>
+                            </div>
+                        }
+                    </div>
+                </li>
+            }
+        </h2>
+
+        <h2 class="drinks">
+            Drinks:
+
+            @foreach (BleakwindBuffet.Data.IOrderItem drinks in BleakwindBuffet.Data.Menu.Drinks())
+            {
+                <li>
+                    <div class="drinks">
+                        @if (drinks is BleakwindBuffet.Data.IOrderItem)
+                        {
+                            <div class="drinks">
+                                @drinks.
+                                <h2>Price: $@drinks.Price</h2>
+                                <h2>Calories: @drinks.Calories </h2>
+                            </div>
+                        }
+                    </div>
+                </li>
+            }
+        </h2>
+
+        <h2 class="flavor">
+            Sailors Soda Flavors:
+            <div>
+                Blackberry,
+                Cherry,
+                Grapefruit,
+                Lemon,
+                Peach,
+                Watermelon
+            </div>
+        </h2>
+        <h2> </h2>
+        <h2>Any entree, side, and drink can be combined into a Combo with a $1 discount</h2>
+
+    </div>
