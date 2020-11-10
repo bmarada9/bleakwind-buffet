@@ -169,3 +169,109 @@ h2.drinks {
         min-height: 50px;
         text-align: left;
     }
+
+p.welcome-message {
+    color: black;
+    font-size: 1.6rem;
+    font-family: 'Times New Roman';
+}
+
+p.general-text {
+    color: black;
+    font-size: 2rem;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; 
+}
+
+ul.menu-list {
+    border-top: 1px solid lightgray;
+}
+
+    ul.menu-list > li {
+        list-style-type: none;
+        border-bottom: 1px solid lightgray;
+        margin: 10px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 50px;
+    }
+
+.menu-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    font-family: 'Times New Roman';
+}
+
+.menu-type {
+    color: black;
+    font-family: 'Times New Roman';
+}
+
+.menu-price, .menu-cals {
+    color: black;
+    font-family: 'Times New Roman'
+}
+
+.menu-item {
+    flex-basis: auto;
+}
+
+.combo-p {
+    color: black;
+    font-size: 2rem;
+    font-family: 'Times New Roman'
+}
+
+.welcome {
+    color: black;
+    font-size: 2rem;
+    font-family: 'Times New Roman'
+}
+
+form#item-database {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto;
+}
+
+#filters {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1;
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2;
+}
+
+#filters input[type=number] {
+    width: 3rem;
+}
+
+#filters h4 {
+    margin: 0.2rem;
+}
+
+

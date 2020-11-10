@@ -4,14 +4,66 @@
     ViewData["Title"] = "Home page";
 }
 
-    <h2 class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Bleakwind Buffet <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-
+    <div class="text-center">
         <!--Welcome Message for the customer--->
-        <h1>
-            We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!
-        </h1>
+        <h1 class="display-4">Welcome to the Bleakwind Buffet!</h1>
+        <p class="welcome-message">
+            We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger.
+            Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.
+        </p>
+
+        <!--Combo Details--->
+        <p class="general-text">Any entree, side, and drink can be combined into a Combo with a $1 discount</p>
+
+        <!--List of all soda flavors--->
+        <p class="general-text"> Sailor Soda flavors: Blackberry, Cherry, Grapefruit, Lemon, Peach, Watermelon </p>
+
+
+        <form id="item-database">
+            <div id="search">
+                <input type="text" name="SearchItem" value="@Model.SearchType" placeholder="Item Name" />
+                <input type="submit" value="Search" />
+            </div>
+            <div id="filters">
+                <h4>Categories</h4>
+                @foreach (String type in BleakwindBuffet.Data.Menu.Category)
+                {
+                    <label>
+                        @type
+                        <input type="checkbox" name="Categories" value="@type"
+                               checked="@Model.SearchType.Contains(type)" />
+                    </label>
+                }
+                <h4>Calories</h4>
+                <div>
+                    <input name="calMin" type="number" min="0" step="1" placeholder="Min" />
+                    to
+                    <input name="calMax" type="number" min="0" step="1" placeholder="Max" />
+                </div>
+                <h4>Price</h4>
+                <div>
+                    $
+                    <input name="priceMin" type="number" min="0" step=".01" placeholder="Min" />
+                    to $
+                    <input name="priceMax" type="number" min="0" step=".01" placeholder="Max" />
+                </div>
+            </div>
+            <div id="results">
+                <ul class="menu-list">
+                    @foreach (BleakwindBuffet.Data.IOrderItem i in @Model.items)
+                    {
+                        <li>
+                            <div class="menu-item">
+                                <div class="menu-name">@i.ToString()</div>
+                                <div class="menu-price">Price: $@i.Price</div>
+                                <div class="menu-cals">Calories: @i.Calories</div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </form>
+
 
         <!--Entree items with price and calories--->
         <h2 class="entree">
@@ -76,21 +128,9 @@
             }
         </h2>
 
-        <!--List of all soda flavors--->
-        <h2 class="flavor">
-            Sailors Soda Flavors:
-            <div>
-                Blackberry,
-                Cherry,
-                Grapefruit,
-                Lemon,
-                Peach,
-                Watermelon
-            </div>
-        </h2>
-        <h2> </h2>
 
-        <!--Combo Details--->
-        <h2>Any entree, side, and drink can be combined into a Combo with a $1 discount</h2>
 
-        </div>
+
+
+
+    </div>
