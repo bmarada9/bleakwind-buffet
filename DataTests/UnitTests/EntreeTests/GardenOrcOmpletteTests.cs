@@ -255,5 +255,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var go = new GardenOrcOmelette();
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(go);
         }
+
+        [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            var go = new GardenOrcOmelette();
+            Assert.Equal("Vegetarian. Two egg omelette packed with a mix of broccoli, mushrooms, and tomatoes. Topped with cheddar cheese.", go.Description);
+        }
     }
 }

@@ -162,5 +162,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             var vs = new MadOtarGrits();
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(vs);
         }
+
+        [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            var vs = new VokunSalad();
+            Assert.Equal("A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges.", vs.Description);
+        }
     }
 }

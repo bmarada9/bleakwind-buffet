@@ -126,7 +126,7 @@ namespace BleakwindBuffet.Data
         }
 
 
-        public static IEnumerable<IOrderItem> Search(string item, IEnumerable<IOrderItem> fullMenu)
+        public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> fullMenu, string item)
         {
             List<IOrderItem> results = new List<IOrderItem>();
 
@@ -147,26 +147,26 @@ namespace BleakwindBuffet.Data
         /// method to filter items by category
         /// </summary>
         /// <param name="fullMenu">all items on menu</param>
-        /// <param name="menuItem">entree, side, or drink</param>
+        /// <param name="type">entree, side, or drink</param>
         /// <returns>a list of filtered items</returns>
-        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> fullMenu, IEnumerable<string> menuItem)
+        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> fullMenu, IEnumerable<string> type)
         {
-            if (menuItem == null || menuItem.ToString().Length == 0) return fullMenu;
+            if (type == null || type.Count() == 0) return fullMenu;
             List<IOrderItem> results = new List<IOrderItem>();
 
             foreach (IOrderItem item in fullMenu)
             {
-                if (item is Entree && menuItem.Contains("Entree"))
+                if (item is Entree && type.Contains("Entree"))
                 {
                     results.Add(item);
                 }
 
-                if (item is Drink && menuItem.Contains("Drink"))
+                if (item is Drink && type.Contains("Drink"))
                 {
                     results.Add(item);
                 }
 
-                if (item is Side && menuItem.Contains("Side"))
+                if (item is Side && type.Contains("Side"))
                 {
                     results.Add(item);
                 }

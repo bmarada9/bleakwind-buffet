@@ -92,6 +92,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
 
         }
 
+        [Fact]
         public void CheckThatFullMenuIsReturned()
         {
             IEnumerable<IOrderItem> menu = Menu.FullMenu();
@@ -152,6 +153,120 @@ namespace BleakwindBuffet.DataTests.UnitTests
                 item => Assert.Equal("Large Mad Otar Grits", item.ToString()),
                 item => Assert.Equal("Large Vokun Salad", item.ToString()));
 
+        }
+
+        [Theory]
+        [InlineData("Entree")]
+        [InlineData("Side")]
+        [InlineData("Drink")]
+        public void ShouldHaveEachDifferentCategory(string type)
+        {
+            Assert.Contains(type, Menu.Category);
+        }
+
+        [Theory]
+        [InlineData(null)]
+        [InlineData("Burger")]
+        [InlineData("Apple")]
+        [InlineData("Small")]
+
+        public void SearchReturnsAllItemsContainingSearchString(string searchItem)
+        {
+            IEnumerable<IOrderItem> fullMenu = Menu.FullMenu();
+            IEnumerable<IOrderItem> results = Menu.Search(fullMenu, searchItem);
+            if (searchItem == null)
+            {
+                Assert.Equal(fullMenu, results);
+            }
+            foreach (IOrderItem i in fullMenu)
+            {
+                if (i.ToString().Contains(searchItem))
+                {
+                    Assert.Contains(i, results);
+                }
+            }
+        }
+
+        [Fact]
+        public void FilterByCategoryTest()
+        {
+            IEnumerable<IOrderItem> fullMenu = Menu.FullMenu();
+            IEnumerable<string> category = new List<string>() { "Entree" };
+
+            fullMenu = Menu.FilterByCategory(fullMenu, category);
+
+            foreach (IOrderItem item in fullMenu)
+            {
+                Assert.Contains(item, Menu.Entrees());
+            }
+
+            category = new List<string>() { "Drink" };
+            fullMenu = Menu.FilterByCategory(fullMenu, category);
+
+            foreach (IOrderItem item in fullMenu)
+            {
+                Assert.Contains(item, Menu.Drinks());
+            }
+
+            category = new List<string>() { "Side" };
+            fullMenu = Menu.FilterByCategory(fullMenu, category);
+
+            foreach (IOrderItem item in fullMenu)
+            {
+                Assert.Contains(item, Menu.Sides());
+            }
+        }
+
+        [Theory]
+        [InlineData(null, null)]
+        [InlineData(0, 50)]
+        [InlineData(50, 150)]
+        [InlineData(0, 500)]
+        public void FilterByCaloriesTest(int? min, int? max)
+        {
+            IEnumerable<IOrderItem> fullMenu = Menu.FullMenu();
+            IEnumerable<IOrderItem> results = Menu.FilterByCalories(fullMenu, min, max);
+
+            if (min == null && max == null)
+            {
+                Assert.Equal(fullMenu, results);
+            }
+            else
+            {
+                foreach (IOrderItem item in fullMenu)
+                {
+                    if (item.Calories <= max && item.Calories >= min)
+                    {
+                        Assert.Contains(item, results);
+                    }
+                }
+            }
+        }
+
+        [Theory]
+        [InlineData(null, null)]
+        [InlineData(0, 5.00)]
+        [InlineData(5.00, 8.50)]
+        [InlineData(0, 2.50)]
+        public void FilterByPriceTest(double? min, double? max)
+        {
+            IEnumerable<IOrderItem> fullMenu = Menu.FullMenu();
+            IEnumerable<IOrderItem> results = Menu.FilterByPrice(fullMenu, min, max);
+
+            if (min == null && max == null)
+            {
+                Assert.Equal(fullMenu, results);
+            }
+            else
+            {
+                foreach (IOrderItem item in fullMenu)
+                {
+                    if (item.Price <= max && item.Price >= min)
+                    {
+                        Assert.Contains(item, results);
+                    }
+                }
+            }
         }
     }
 }

@@ -98,6 +98,19 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
+        /// returns the description of the item
+        /// </summary>
+        private string description;
+        public string Description
+        {
+            get
+            {
+                description = "Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.";
+                return description;
+            }
+        }
+
+        /// <summary>
         /// to string for  entree
         /// </summary>
         public override string ToString()

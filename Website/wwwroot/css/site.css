@@ -274,4 +274,71 @@ form#item-database {
     margin: 0.2rem;
 }
 
+h1 {
+    color: black;
+    font-size: 2rem;
+    font-family: 'Times New Roman'
+}
 
+
+
+@media print {
+    .advertisement {
+        display: none;
+    }
+}
+
+@media (orientation: landscape) {
+    h1 {
+        color: green;
+    }
+}
+
+@media (orientation: portrait) {
+    h1 {
+        color: orange;
+    }
+}
+
+aside {
+    border: 5px solid gray;
+}
+
+@media(max-width: 750px) {
+    aside {
+        border: 3px dashed gray;
+    }
+}
+
+
+
+.float-columns > div {
+    float: left;
+    width: 33%;
+}
+
+.clearfix {
+    clear: both;
+}
+
+@media(max-width: 490px) {
+    aside {
+        border: 2px dotted gray;
+    }
+
+    float-columns > div {
+        float: none;
+        width: 100%;
+    }
+}
+
+.flex-columns {
+    display: flex;
+    flex-direction: row;
+}
+
+@media(max-width: 490px) {
+    flex-columns {
+        flex-direction: column;
+    }
+}

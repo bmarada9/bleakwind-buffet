@@ -103,6 +103,19 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// returns the description of the item
+        /// </summary>
+        private string description;
+        public string Description
+        {
+            get
+            {
+                description = "An old-fashioned jerked soda, carbonated water and flavored syrup poured over a bed of crushed ice.";
+                return description;
+            }
+        }
+
         // <summary>
         /// to string for drink 
         /// </summary>

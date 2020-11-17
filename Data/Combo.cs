@@ -112,5 +112,13 @@ namespace BleakwindBuffet.Data
                 return si;
             }
         }
+
+        public string Description
+        {
+            get
+            {
+                return "It's a combo";
+            }
+        }
     }
 }

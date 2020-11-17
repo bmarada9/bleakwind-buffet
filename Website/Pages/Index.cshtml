@@ -21,7 +21,7 @@
 
         <form id="item-database">
             <div id="search">
-                <input type="text" name="SearchItem" value="@Model.SearchType" placeholder="Item Name" />
+                <input type="text" name="SearchItem" value="@Model.SearchTerms" />
                 <input type="submit" value="Search" />
             </div>
             <div id="filters">
@@ -29,9 +29,8 @@
                 @foreach (String type in BleakwindBuffet.Data.Menu.Category)
                 {
                     <label>
+                        <input type="checkbox" name="Categories" value="@type" />
                         @type
-                        <input type="checkbox" name="Categories" value="@type"
-                               checked="@Model.SearchType.Contains(type)" />
                     </label>
                 }
                 <h4>Calories</h4>
@@ -48,7 +47,9 @@
                     <input name="priceMax" type="number" min="0" step=".01" placeholder="Max" />
                 </div>
             </div>
+
             <div id="results">
+                <h1>Search Results</h1>
                 <ul class="menu-list">
                     @foreach (BleakwindBuffet.Data.IOrderItem i in @Model.items)
                     {
@@ -57,6 +58,7 @@
                                 <div class="menu-name">@i.ToString()</div>
                                 <div class="menu-price">Price: $@i.Price</div>
                                 <div class="menu-cals">Calories: @i.Calories</div>
+                                <div class="menu-cals">Description: @i.Description</div>
                             </div>
                         </li>
                     }
@@ -64,73 +66,6 @@
             </div>
         </form>
 
-
-        <!--Entree items with price and calories--->
-        <h2 class="entree">
-            Entrees:
-
-            @foreach (BleakwindBuffet.Data.IOrderItem entree in BleakwindBuffet.Data.Menu.Entrees())
-            {
-                <li>
-                    <div class="entree">
-                        @if (entree is BleakwindBuffet.Data.IOrderItem)
-                        {
-                            <div class="entree">
-                                @entree
-                                <div>Price: $@entree.Price</div>
-                                <div>Calories: @entree.Calories </div>
-                            </div>
-                        }
-                    </div>
-                </li>
-            }
-        </h2>
-
-        <!--Side items with price and calories--->
-        <h2 class="side">
-            Sides:
-
-            @foreach (BleakwindBuffet.Data.IOrderItem sides in BleakwindBuffet.Data.Menu.Sides())
-            {
-                <li>
-                    <div class="side">
-                        @if (sides is BleakwindBuffet.Data.IOrderItem)
-                        {
-                            <div class="side">
-                                @sides
-                                <h2>Price: $@sides.Price</h2>
-                                <h2>Calories: @sides.Calories </h2>
-                            </div>
-                        }
-                    </div>
-                </li>
-            }
-        </h2>
-
-        <!--Drink items with price and calories--->
-        <h2 class="drinks">
-            Drinks:
-
-            @foreach (BleakwindBuffet.Data.IOrderItem drinks in BleakwindBuffet.Data.Menu.Drinks())
-            {
-                <li>
-                    <div class="drinks">
-                        @if (drinks is BleakwindBuffet.Data.IOrderItem)
-                        {
-                            <div class="drinks">
-                                @drinks.
-                                <h2>Price: $@drinks.Price</h2>
-                                <h2>Calories: @drinks.Calories </h2>
-                            </div>
-                        }
-                    </div>
-                </li>
-            }
-        </h2>
-
-
-
-
-
+        
 
     </div>

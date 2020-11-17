@@ -71,6 +71,19 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
+        /// <summary>
+        /// returns the description of the item
+        /// </summary>
+        private string description;
+        public string Description
+        {
+            get
+            {
+                description = "Crispy fried potato waffle fries.";
+                return description;
+            }
+        }
+
         // <summary>
         /// to string for side 
         /// </summary>

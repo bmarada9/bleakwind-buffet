@@ -69,6 +69,19 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
+        /// <summary>
+        /// returns the description of the item
+        /// </summary>
+        private string description;
+        public string Description
+        {
+            get
+            {
+                description = "Cheesey Grits.";
+                return description;
+            }
+        }
+
         // <summary>
         /// to string for side 
         /// </summary>

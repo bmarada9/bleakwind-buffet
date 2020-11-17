@@ -68,6 +68,19 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
+        /// <summary>
+        /// returns the description of the item
+        /// </summary>
+        private string description;
+        public string Description
+        {
+            get
+            {
+                description = "A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges.";
+                return description;
+            }
+        }
+
         // <summary>
         /// to string for side 
         /// </summary>

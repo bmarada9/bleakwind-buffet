@@ -556,5 +556,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var tt = new ThalmorTriple();
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(tt);
         }
+
+        [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            var tt = new ThalmorTriple();
+            Assert.Equal("Think you are strong enough to take on the Thalmor? Inlcudes two 1/4lb patties with a 1/2lb patty inbetween with ketchup, mustard, pickle, cheese, tomato, lettuce, mayo, bacon, and an egg.", tt.Description);
+        }
     }
 }

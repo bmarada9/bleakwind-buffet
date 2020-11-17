@@ -165,5 +165,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             var mog = new MadOtarGrits();
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(mog);
         }
+
+        [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            var mo = new MadOtarGrits();
+            Assert.Equal("Cheesey Grits.", mo.Description);
+        }
     }
 }
