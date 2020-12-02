@@ -21,7 +21,7 @@
 
         <form id="item-database">
             <div id="search">
-                <input type="text" name="SearchItem" value="@Model.SearchTerms" />
+                <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
                 <input type="submit" value="Search" />
             </div>
             <div id="filters">
@@ -29,7 +29,7 @@
                 @foreach (String type in BleakwindBuffet.Data.Menu.Category)
                 {
                     <label>
-                        <input type="checkbox" name="Categories" value="@type" />
+                        <input type="checkbox" name="Category" value="@type" />
                         @type
                     </label>
                 }
