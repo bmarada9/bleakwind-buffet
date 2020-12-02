@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Bhargav Marada
+ * Class name: Menu.cs
+ * Purpose: a class that contains the items on the menu
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

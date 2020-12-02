@@ -311,7 +311,6 @@ aside {
 }
 
 
-
 .float-columns > div {
     float: left;
     width: 33%;
@@ -338,7 +337,10 @@ aside {
 }
 
 @media(max-width: 490px) {
-    flex-columns {
+    .flex-columns {
         flex-direction: column;
+    }
+    .flex-columns > div{
+        width: 100%;
     }
 }

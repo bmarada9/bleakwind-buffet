@@ -13,7 +13,7 @@ using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public abstract class Drink: IOrderItem
+    public abstract class Drink
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
