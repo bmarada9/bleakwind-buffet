@@ -48,17 +48,17 @@ namespace Website.Pages
             {
                 var fullItems = Menu.FullMenu();
                 string[] searches = SearchTerms.Split(' ');
-                items = items.Where(item => item.ToString() != null && (item.ToString().Contains(searches[0], StringComparison.InvariantCultureIgnoreCase)
-                || item.Description.Contains(searches[0], StringComparison.InvariantCultureIgnoreCase)));
-                for (int i = 1; i < searches.Length; i++)
-                {
-                    var tempItems = fullItems.Where(item => item.ToString() != null && (item.ToString().Contains(searches[i], StringComparison.InvariantCultureIgnoreCase)
-                || item.Description.Contains(searches[i], StringComparison.InvariantCultureIgnoreCase)));
-                    if (tempItems != null)
+                items = items.Where(item => {
+                    if (item.ToString() == null) return false;
+                    foreach (string term in searches)
                     {
-                        items = items.Concat(tempItems);
+                        if (item.ToString().Contains(term, StringComparison.InvariantCultureIgnoreCase)
+                    || item.Description.Contains(term, StringComparison.InvariantCultureIgnoreCase)) return true;
                     }
-                }
+                    return false;
+                });
+
+                
             }
             /*if (Category != null && Category.Length != 0)
             {
